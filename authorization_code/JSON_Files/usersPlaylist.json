@@ -1,0 +1,265 @@
+{
+  "href" : "https://api.spotify.com/v1/users/firesquirrel66/playlists?offset=0&limit=50",
+  "items" : [ {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/1uAojnavPpCa1W4uTWZYFu"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/1uAojnavPpCa1W4uTWZYFu",
+    "id" : "1uAojnavPpCa1W4uTWZYFu",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://pl.scdn.co/images/pl/default/408790d684859632d794ac6d134d39d8f646f9e1",
+      "width" : null
+    } ],
+    "name" : "Patty's Music",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "MjcyLDhkN2YwZWQ4NDg2ZGY2ZjVkMWMyOWJiMTI0ZDZiODc2ODgxMjA0NDI=",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/1uAojnavPpCa1W4uTWZYFu/tracks",
+      "total" : 619
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:1uAojnavPpCa1W4uTWZYFu"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/1IO0N0jjLkhcnD2gMBqMTv"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/1IO0N0jjLkhcnD2gMBqMTv",
+    "id" : "1IO0N0jjLkhcnD2gMBqMTv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/18ef6523950bc7de0f7d33e139d8d8212d1368c7aa5edb0e757f20f917e13ec0254b0b7f3570b62fd41723451650f3f268b9a2f9fad40816fd2cd41ed6d76f39db4c7b725d6f0f9b83a26c8a5a825e40",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/18ef6523950bc7de0f7d33e139d8d8212d1368c7aa5edb0e757f20f917e13ec0254b0b7f3570b62fd41723451650f3f268b9a2f9fad40816fd2cd41ed6d76f39db4c7b725d6f0f9b83a26c8a5a825e40",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/18ef6523950bc7de0f7d33e139d8d8212d1368c7aa5edb0e757f20f917e13ec0254b0b7f3570b62fd41723451650f3f268b9a2f9fad40816fd2cd41ed6d76f39db4c7b725d6f0f9b83a26c8a5a825e40",
+      "width" : 60
+    } ],
+    "name" : "Vibing Music",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "NzIsNmYwOWZmNmQ5NjMzOTk2MWM0M2EyZGQwZWM3MzYwMjkyZjliOWQzYQ==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/1IO0N0jjLkhcnD2gMBqMTv/tracks",
+      "total" : 87
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:1IO0N0jjLkhcnD2gMBqMTv"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/0PJI5WtIPDrZsxoGmXB907"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/0PJI5WtIPDrZsxoGmXB907",
+    "id" : "0PJI5WtIPDrZsxoGmXB907",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/4c105eb094a6b0df9918b59ad919a72276795565b7154ab80350a9b9bb8a897658b6349c8d8dc35ed33045c0f45f4546fdf1088ed7dc63409b3e5f4be5e617df404d6982f114f5a5d0e3b991af7e1fac",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/4c105eb094a6b0df9918b59ad919a72276795565b7154ab80350a9b9bb8a897658b6349c8d8dc35ed33045c0f45f4546fdf1088ed7dc63409b3e5f4be5e617df404d6982f114f5a5d0e3b991af7e1fac",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/4c105eb094a6b0df9918b59ad919a72276795565b7154ab80350a9b9bb8a897658b6349c8d8dc35ed33045c0f45f4546fdf1088ed7dc63409b3e5f4be5e617df404d6982f114f5a5d0e3b991af7e1fac",
+      "width" : 60
+    } ],
+    "name" : "Indie Folk/Rock",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "NTMsNGMyOGI5YjJlYjllMmRlMzNiN2RiYWRlYjY2OTc5ZWNmOThjZWRkYQ==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/0PJI5WtIPDrZsxoGmXB907/tracks",
+      "total" : 33
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:0PJI5WtIPDrZsxoGmXB907"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/1wx0mEDpbOYz7iyGSbytWw"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/1wx0mEDpbOYz7iyGSbytWw",
+    "id" : "1wx0mEDpbOYz7iyGSbytWw",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/000b0c069fb82e77601849c77d25a8e297b27a6a17e6c85e2d5977463cb17fbe3565953b489179f0775fa2aa5d1ec3f3bb4dd1030722d4c5c28a2a9aa5cc947115edcf5322c7a3c93aaa5dff4051c8f2",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/000b0c069fb82e77601849c77d25a8e297b27a6a17e6c85e2d5977463cb17fbe3565953b489179f0775fa2aa5d1ec3f3bb4dd1030722d4c5c28a2a9aa5cc947115edcf5322c7a3c93aaa5dff4051c8f2",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/000b0c069fb82e77601849c77d25a8e297b27a6a17e6c85e2d5977463cb17fbe3565953b489179f0775fa2aa5d1ec3f3bb4dd1030722d4c5c28a2a9aa5cc947115edcf5322c7a3c93aaa5dff4051c8f2",
+      "width" : 60
+    } ],
+    "name" : "Weeb Music",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "NDYsNWIwMjgwMDVjNzNiMTQyZmIyOTc0YTQ5Yzg2ZTdiYTA0ZWQzMDViZg==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/1wx0mEDpbOYz7iyGSbytWw/tracks",
+      "total" : 37
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:1wx0mEDpbOYz7iyGSbytWw"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/6niNPELssccpLVkhptjN01"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/6niNPELssccpLVkhptjN01",
+    "id" : "6niNPELssccpLVkhptjN01",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/3dfaa1903aa5ee995624ae65e2a17924c7886e0b74fd0904ce10b02ec420098dd4140da37e36a609aac1fc06d985a1ff18c7baee307e46b8b3ca795aae76e90d49a54bd9cbdc144a3ea718e7dede43e4",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/3dfaa1903aa5ee995624ae65e2a17924c7886e0b74fd0904ce10b02ec420098dd4140da37e36a609aac1fc06d985a1ff18c7baee307e46b8b3ca795aae76e90d49a54bd9cbdc144a3ea718e7dede43e4",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/3dfaa1903aa5ee995624ae65e2a17924c7886e0b74fd0904ce10b02ec420098dd4140da37e36a609aac1fc06d985a1ff18c7baee307e46b8b3ca795aae76e90d49a54bd9cbdc144a3ea718e7dede43e4",
+      "width" : 60
+    } ],
+    "name" : "Chrome Sparks",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "MTQsYjdiNjQ0ZjY5NzZlOGRhNTlkMDg2ZTE3YzI1N2QyMjMyNDFjZjZmZA==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/6niNPELssccpLVkhptjN01/tracks",
+      "total" : 16
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:6niNPELssccpLVkhptjN01"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/7wGvZrfMrxZqY3PJ5mJp5h"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/7wGvZrfMrxZqY3PJ5mJp5h",
+    "id" : "7wGvZrfMrxZqY3PJ5mJp5h",
+    "images" : [ {
+      "height" : null,
+      "url" : "https://pl.scdn.co/images/pl/default/0cfdd49f3cca68a273ca513724b397bf1c079767",
+      "width" : null
+    } ],
+    "name" : "Hippie Sabotage",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "MjcsY2RjMzlhYzVlNmI2NTYyZDc4MDIzM2I5OTY1YjE0MWRkODg3MDMzZg==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/7wGvZrfMrxZqY3PJ5mJp5h/tracks",
+      "total" : 33
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:7wGvZrfMrxZqY3PJ5mJp5h"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/6jPoEtv6y733xOb4m973u3"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/6jPoEtv6y733xOb4m973u3",
+    "id" : "6jPoEtv6y733xOb4m973u3",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/131f6013e050094d400afcdf8dd2fc0b267deb1c",
+      "width" : 640
+    } ],
+    "name" : "Soundtracks",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "MTcsMDA3Y2FiMjI3NGI3NDMwNDA2NjMzZjk2YTI2ZDliMmU3Mjk4ZTIyMQ==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/6jPoEtv6y733xOb4m973u3/tracks",
+      "total" : 222
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:6jPoEtv6y733xOb4m973u3"
+  } ],
+  "limit" : 50,
+  "next" : null,
+  "offset" : 0,
+  "previous" : null,
+  "total" : 7
+}
