@@ -92,7 +92,7 @@ app.get('/callback', function(req, res)
                     redirect_uri: redirect_uri,
                     grant_type: 'authorization_code'
                },
-               headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+               headers: { 'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64')) },
                json: true
           };
 
@@ -113,7 +113,7 @@ app.get('/callback', function(req, res)
                     // use the access token to access the Spotify Web API
                     request.get(options, function(error, response, body)
                     {
-                         console.log(body);
+                         //console.log(body);
                     });
 
                     // we can also pass the token to the browser to make requests from there
@@ -136,115 +136,170 @@ app.get('/callback', function(req, res)
      }
 });
 
-app.get('/refresh_token', function(req, res) {
-
-  // requesting access token from refresh token
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
-    json: true
-  };
-
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-      res.send({
-        'access_token': access_token
-      });
-    }
-  });
-});
-
-app.get('/grap_top_artists', function(req, res) {
-
+app.get('/refresh_token', function(req, res)
+{
      // requesting access token from refresh token
      var refresh_token = req.query.refresh_token;
-     var authOptions = {
-       url: 'https://accounts.spotify.com/api/token',
-       headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-       form: {
-         grant_type: 'refresh_token',
-         refresh_token: refresh_token
-       },
-       json: true
+     var authOptions =
+     {
+          url: 'https://accounts.spotify.com/api/token',
+          headers: { 'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64')) },
+          form: {
+               grant_type: 'refresh_token',
+               refresh_token: refresh_token
+          },
+          json: true
      };
 
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-
-      getUserTop("tracks", access_token, 50, "long_term", 0, function(res){
-           let data_loc = __dirname + '\\JSON_Files\\usersTopSongs.json';
-
-           fs.writeFile(data_loc, res, 'utf8', function(err){
-               if (err) throw err;
-          });
+     request.post(authOptions, function(error, response, body)
+     {
+          if (!error && response.statusCode === 200)
+          {
+               var access_token = body.access_token;
+               res.send(
+               {
+                    'access_token': access_token
+               });
+          }
      });
-
-     getUserPlaylists("firesquirrel66", access_token, 50, 0, function(res){
-          let data_loc = __dirname + '\\JSON_Files\\usersPlaylist.json';
-
-          fs.writeFile(data_loc, res, 'utf8', function(err){
-              if (err) throw err;
-              });
-     })
-      res.send({
-        'access_token': access_token
-      });
-    }
-  });
 });
 
-function getUserTop(type, access_token, limit, time_range, offset, __callback=(res)=>{}){
-  if (access_token != null){
-    const options = {
-      url: 'https://api.spotify.com/v1/me/top/' + type + "?" + querystring.stringify({
-        "time_range": time_range,
-        "limit": limit,
-        "offset": offset
-      }),
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-      }
-    }
+app.get('/grap_top_artists', function(req, res)
+{
+     // requesting access token from refresh token
+     var refresh_token = req.query.refresh_token;
+     var authOptions =
+     {
+          url: 'https://accounts.spotify.com/api/token',
+          headers: { 'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64')) },
+          form: {
+               grant_type: 'refresh_token',
+               refresh_token: refresh_token
+          },
+          json: true
+     };
 
-    request( options, function(error, response, body){
-      if (!error && response.statusCode === 200){
-        __callback(body);
-      }else{
-        console.log( response.statusCode + ": " + error );
-        __callback(null)
-      }
-    });
-  }
+     request.post(authOptions, function(error, response, body)
+     {
+          if (!error && response.statusCode === 200)
+          {
+               var access_token = body.access_token;
+
+               getUserTop("tracks", access_token, 50, "long_term", 0, function(res)
+               {
+                    let data_loc = __dirname + '\\JSON_Files\\usersTopSongs.json';
+
+                    fs.writeFile(data_loc, res, 'utf8', function(err)
+                    {
+                         if (err) throw err;
+                    });
+
+                    fs.readFile(data_loc, function(err, data)
+                    {
+                         // json data
+                         var jsonData = data;
+
+                         // parse json
+                         var jsonParsed = JSON.parse(jsonData);
+
+                         // access elements
+                         console.log("Printing Users Top 50 songs");
+                         console.log("---------------------");
+                         for(var item in jsonParsed.items)
+                         {
+                              console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
+                         }
+                         console.log("---------------------");
+
+                         if(!err)
+                         {
+                              console.log("Parsed the JSON file and printed data succesfully");
+                         }
+                    });
+               })
+
+               getUserPlaylists("firesquirrel66", access_token, 50, 0, function(res)
+               {
+                    let data_loc = __dirname + '\\JSON_Files\\usersPlaylist.json';
+
+                    fs.writeFile(data_loc, res, 'utf8', function(err)
+                    {
+                         if (err) throw err;
+                    });
+               })
+
+               res.send(
+               {
+                    'access_token': access_token
+               });
+          }
+     });
+});
+
+//Thomas Young's AuxJockey repository - https://github.com/thyo9470/AuxJockey.git
+function getUserTop(type, access_token, limit, time_range, offset, __callback=(res)=>{})
+{
+     if (access_token != null)
+     {
+          const options =
+          {
+               url: 'https://api.spotify.com/v1/me/top/' + type + "?" + querystring.stringify(
+               {
+                    "time_range": time_range,
+                    "limit": limit,
+                    "offset": offset
+               }),
+               headers:
+               {
+                    'Authorization': 'Bearer ' + access_token
+               }
+          }
+
+          request( options, function(error, response, body)
+          {
+               if (!error && response.statusCode === 200)
+               {
+                    __callback(body);
+               }
+               else
+               {
+                    console.log( response.statusCode + ": " + error );
+                    __callback(null)
+               }
+          });
+     }
 }
 
-function getUserPlaylists(userID ,access_token, limit, offset, __callback=(res)=>{}){
-  if (access_token != null){
-    const options = {
-      url: 'https://api.spotify.com/v1/users/' + userID + '/playlists' + "?" + querystring.stringify({
-        "limit": limit,
-        "offset": offset
-      }),
-      headers: {
-        'Authorization': 'Bearer ' + access_token
-      }
-    }
+function getUserPlaylists(userID ,access_token, limit, offset, __callback=(res)=>{})
+{
+     if (access_token != null)
+     {
+          const options =
+          {
+               url: 'https://api.spotify.com/v1/users/' + userID + '/playlists' + "?" + querystring.stringify(
+               {
+                    "limit": limit,
+                    "offset": offset
+               }),
+               headers:
+               {
+                    'Authorization': 'Bearer ' + access_token
+               }
+          }
 
-    request( options, function(error, response, body){
-      if (!error && response.statusCode === 200){
-        __callback(body);
-      }else{
-        console.log( response.statusCode + ": " + error );
-        __callback(null)
-      }
-    });
-  }
+          request( options, function(error, response, body)
+          {
+               if (!error && response.statusCode === 200)
+               {
+                    __callback(body);
+               }
+               else
+               {
+                    console.log( response.statusCode + ": " + error );
+                    __callback(null)
+               }
+          });
+     }
 }
 
 console.log('Listening on 8888');

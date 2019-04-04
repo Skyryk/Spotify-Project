@@ -302,7 +302,7 @@
     "id" : "7ayLNFwz2J3JYAhPVOzpcN",
     "is_local" : false,
     "name" : "Change Me",
-    "popularity" : 31,
+    "popularity" : 32,
     "preview_url" : "https://p.scdn.co/mp3-preview/0f09938ad785d281a326113d6b41941bcbb11881?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 1,
     "type" : "track",
@@ -601,11 +601,79 @@
     "id" : "41AJMxy7LgBJclFgn2jwkX",
     "is_local" : false,
     "name" : "Richter: Recomposed By Max Richter: Vivaldi, The Four Seasons - Winter 3",
-    "popularity" : 11,
+    "popularity" : 10,
     "preview_url" : "https://p.scdn.co/mp3-preview/1a4e5e3c780d51d8577f8a12d1c860b66439fbe6?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 5,
     "type" : "track",
     "uri" : "spotify:track:41AJMxy7LgBJclFgn2jwkX"
+  }, {
+    "album" : {
+      "album_type" : "SINGLE",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/2pTCZ9C1fXdaVlv6d5EIXM"
+        },
+        "href" : "https://api.spotify.com/v1/artists/2pTCZ9C1fXdaVlv6d5EIXM",
+        "id" : "2pTCZ9C1fXdaVlv6d5EIXM",
+        "name" : "Chrome Sparks",
+        "type" : "artist",
+        "uri" : "spotify:artist:2pTCZ9C1fXdaVlv6d5EIXM"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2yt27CaN3hjii0G1aWNBA7"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2yt27CaN3hjii0G1aWNBA7",
+      "id" : "2yt27CaN3hjii0G1aWNBA7",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/45a1836a7dfc5380defebe9fc27a8f886079e4f4",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/be0e091fc20c9c00f329ae190ad8aee47c877c20",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/dc79583e466ce0d69d9105dd086f652c9833a51a",
+        "width" : 64
+      } ],
+      "name" : "Sparks EP",
+      "release_date" : "2013-09-13",
+      "release_date_precision" : "day",
+      "total_tracks" : 6,
+      "type" : "album",
+      "uri" : "spotify:album:2yt27CaN3hjii0G1aWNBA7"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2pTCZ9C1fXdaVlv6d5EIXM"
+      },
+      "href" : "https://api.spotify.com/v1/artists/2pTCZ9C1fXdaVlv6d5EIXM",
+      "id" : "2pTCZ9C1fXdaVlv6d5EIXM",
+      "name" : "Chrome Sparks",
+      "type" : "artist",
+      "uri" : "spotify:artist:2pTCZ9C1fXdaVlv6d5EIXM"
+    } ],
+    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "disc_number" : 1,
+    "duration_ms" : 337095,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "QMHHY1300004"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/5bcuFa5UQFnYxbJAiEBfTT"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/5bcuFa5UQFnYxbJAiEBfTT",
+    "id" : "5bcuFa5UQFnYxbJAiEBfTT",
+    "is_local" : false,
+    "name" : "Send The Pain On",
+    "popularity" : 42,
+    "preview_url" : "https://p.scdn.co/mp3-preview/262fafb4f4f9a0f37df7f1ec4daa4ce10dca3b75?cid=d216da85562b446ab1e4d2511b927ae5",
+    "track_number" : 4,
+    "type" : "track",
+    "uri" : "spotify:track:5bcuFa5UQFnYxbJAiEBfTT"
   }, {
     "album" : {
       "album_type" : "ALBUM",
@@ -737,7 +805,7 @@
     "id" : "2zFF6jG5hQArbzcXz3KUWk",
     "is_local" : false,
     "name" : "Cool for the Summer",
-    "popularity" : 74,
+    "popularity" : 73,
     "preview_url" : "https://p.scdn.co/mp3-preview/e8af63fb126bd9979894fff77faa29f3f0bf3886?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 2,
     "type" : "track",
@@ -810,74 +878,6 @@
     "track_number" : 10,
     "type" : "track",
     "uri" : "spotify:track:3sEaPOE0FXZUYpXBxNJIV2"
-  }, {
-    "album" : {
-      "album_type" : "SINGLE",
-      "artists" : [ {
-        "external_urls" : {
-          "spotify" : "https://open.spotify.com/artist/2pTCZ9C1fXdaVlv6d5EIXM"
-        },
-        "href" : "https://api.spotify.com/v1/artists/2pTCZ9C1fXdaVlv6d5EIXM",
-        "id" : "2pTCZ9C1fXdaVlv6d5EIXM",
-        "name" : "Chrome Sparks",
-        "type" : "artist",
-        "uri" : "spotify:artist:2pTCZ9C1fXdaVlv6d5EIXM"
-      } ],
-      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/album/2yt27CaN3hjii0G1aWNBA7"
-      },
-      "href" : "https://api.spotify.com/v1/albums/2yt27CaN3hjii0G1aWNBA7",
-      "id" : "2yt27CaN3hjii0G1aWNBA7",
-      "images" : [ {
-        "height" : 640,
-        "url" : "https://i.scdn.co/image/45a1836a7dfc5380defebe9fc27a8f886079e4f4",
-        "width" : 640
-      }, {
-        "height" : 300,
-        "url" : "https://i.scdn.co/image/be0e091fc20c9c00f329ae190ad8aee47c877c20",
-        "width" : 300
-      }, {
-        "height" : 64,
-        "url" : "https://i.scdn.co/image/dc79583e466ce0d69d9105dd086f652c9833a51a",
-        "width" : 64
-      } ],
-      "name" : "Sparks EP",
-      "release_date" : "2013-09-13",
-      "release_date_precision" : "day",
-      "total_tracks" : 6,
-      "type" : "album",
-      "uri" : "spotify:album:2yt27CaN3hjii0G1aWNBA7"
-    },
-    "artists" : [ {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/2pTCZ9C1fXdaVlv6d5EIXM"
-      },
-      "href" : "https://api.spotify.com/v1/artists/2pTCZ9C1fXdaVlv6d5EIXM",
-      "id" : "2pTCZ9C1fXdaVlv6d5EIXM",
-      "name" : "Chrome Sparks",
-      "type" : "artist",
-      "uri" : "spotify:artist:2pTCZ9C1fXdaVlv6d5EIXM"
-    } ],
-    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-    "disc_number" : 1,
-    "duration_ms" : 337095,
-    "explicit" : false,
-    "external_ids" : {
-      "isrc" : "QMHHY1300004"
-    },
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/track/5bcuFa5UQFnYxbJAiEBfTT"
-    },
-    "href" : "https://api.spotify.com/v1/tracks/5bcuFa5UQFnYxbJAiEBfTT",
-    "id" : "5bcuFa5UQFnYxbJAiEBfTT",
-    "is_local" : false,
-    "name" : "Send The Pain On",
-    "popularity" : 42,
-    "preview_url" : "https://p.scdn.co/mp3-preview/262fafb4f4f9a0f37df7f1ec4daa4ce10dca3b75?cid=d216da85562b446ab1e4d2511b927ae5",
-    "track_number" : 4,
-    "type" : "track",
-    "uri" : "spotify:track:5bcuFa5UQFnYxbJAiEBfTT"
   }, {
     "album" : {
       "album_type" : "ALBUM",
@@ -1240,7 +1240,7 @@
     "id" : "1k91Bhe2OYn0osSD6mMay2",
     "is_local" : false,
     "name" : "Kodama",
-    "popularity" : 43,
+    "popularity" : 44,
     "preview_url" : "https://p.scdn.co/mp3-preview/198ea0a6bd787ba3a6c86930814f2a6a43d5532b?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 1,
     "type" : "track",
@@ -1702,7 +1702,7 @@
     "id" : "7GTtEE6EgRb7yI0BEGKZfS",
     "is_local" : false,
     "name" : "surface",
-    "popularity" : 37,
+    "popularity" : 33,
     "preview_url" : null,
     "track_number" : 11,
     "type" : "track",
@@ -1933,7 +1933,7 @@
     "id" : "6LoQkCFWTaYHyz2ii3MlYv",
     "is_local" : false,
     "name" : "Goodbye",
-    "popularity" : 44,
+    "popularity" : 45,
     "preview_url" : "https://p.scdn.co/mp3-preview/e1eacc30852b08a4773cd5311850b59a8c809017?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 11,
     "type" : "track",
@@ -2010,7 +2010,7 @@
     "id" : "5LInapZvnYwgLGXWQeGrIR",
     "is_local" : false,
     "name" : "love (wip)",
-    "popularity" : 41,
+    "popularity" : 37,
     "preview_url" : null,
     "track_number" : 7,
     "type" : "track",
@@ -2301,74 +2301,6 @@
       "album_type" : "ALBUM",
       "artists" : [ {
         "external_urls" : {
-          "spotify" : "https://open.spotify.com/artist/41rVuRHYAiH7ltBTHVR9We"
-        },
-        "href" : "https://api.spotify.com/v1/artists/41rVuRHYAiH7ltBTHVR9We",
-        "id" : "41rVuRHYAiH7ltBTHVR9We",
-        "name" : "Slushii",
-        "type" : "artist",
-        "uri" : "spotify:artist:41rVuRHYAiH7ltBTHVR9We"
-      } ],
-      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/album/08fLzwK3ueT7etjpdinnRW"
-      },
-      "href" : "https://api.spotify.com/v1/albums/08fLzwK3ueT7etjpdinnRW",
-      "id" : "08fLzwK3ueT7etjpdinnRW",
-      "images" : [ {
-        "height" : 640,
-        "url" : "https://i.scdn.co/image/bccc4d7fa3438a977ec829e5daf7de9280913ef1",
-        "width" : 640
-      }, {
-        "height" : 300,
-        "url" : "https://i.scdn.co/image/48cf984d6f5bb182db79c241d82559d63a9b1a73",
-        "width" : 300
-      }, {
-        "height" : 64,
-        "url" : "https://i.scdn.co/image/866e948c7d3474f30eed5e9795deaf338a312723",
-        "width" : 64
-      } ],
-      "name" : "Brain Freeze",
-      "release_date" : "2016-05-20",
-      "release_date_precision" : "day",
-      "total_tracks" : 7,
-      "type" : "album",
-      "uri" : "spotify:album:08fLzwK3ueT7etjpdinnRW"
-    },
-    "artists" : [ {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/41rVuRHYAiH7ltBTHVR9We"
-      },
-      "href" : "https://api.spotify.com/v1/artists/41rVuRHYAiH7ltBTHVR9We",
-      "id" : "41rVuRHYAiH7ltBTHVR9We",
-      "name" : "Slushii",
-      "type" : "artist",
-      "uri" : "spotify:artist:41rVuRHYAiH7ltBTHVR9We"
-    } ],
-    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-    "disc_number" : 1,
-    "duration_ms" : 200008,
-    "explicit" : false,
-    "external_ids" : {
-      "isrc" : "TCACO1620368"
-    },
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/track/7c5h7ZlLFcZoFBvFxfvKSH"
-    },
-    "href" : "https://api.spotify.com/v1/tracks/7c5h7ZlLFcZoFBvFxfvKSH",
-    "id" : "7c5h7ZlLFcZoFBvFxfvKSH",
-    "is_local" : false,
-    "name" : "Destiny",
-    "popularity" : 37,
-    "preview_url" : "https://p.scdn.co/mp3-preview/3c7c47b12962ab6af66fc7129494cf6012fdcf93?cid=d216da85562b446ab1e4d2511b927ae5",
-    "track_number" : 6,
-    "type" : "track",
-    "uri" : "spotify:track:7c5h7ZlLFcZoFBvFxfvKSH"
-  }, {
-    "album" : {
-      "album_type" : "ALBUM",
-      "artists" : [ {
-        "external_urls" : {
           "spotify" : "https://open.spotify.com/artist/244uLu9lkdw39BJwlul3k8"
         },
         "href" : "https://api.spotify.com/v1/artists/244uLu9lkdw39BJwlul3k8",
@@ -2437,6 +2369,74 @@
       "album_type" : "ALBUM",
       "artists" : [ {
         "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/41rVuRHYAiH7ltBTHVR9We"
+        },
+        "href" : "https://api.spotify.com/v1/artists/41rVuRHYAiH7ltBTHVR9We",
+        "id" : "41rVuRHYAiH7ltBTHVR9We",
+        "name" : "Slushii",
+        "type" : "artist",
+        "uri" : "spotify:artist:41rVuRHYAiH7ltBTHVR9We"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/08fLzwK3ueT7etjpdinnRW"
+      },
+      "href" : "https://api.spotify.com/v1/albums/08fLzwK3ueT7etjpdinnRW",
+      "id" : "08fLzwK3ueT7etjpdinnRW",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/bccc4d7fa3438a977ec829e5daf7de9280913ef1",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/48cf984d6f5bb182db79c241d82559d63a9b1a73",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/866e948c7d3474f30eed5e9795deaf338a312723",
+        "width" : 64
+      } ],
+      "name" : "Brain Freeze",
+      "release_date" : "2016-05-20",
+      "release_date_precision" : "day",
+      "total_tracks" : 7,
+      "type" : "album",
+      "uri" : "spotify:album:08fLzwK3ueT7etjpdinnRW"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/41rVuRHYAiH7ltBTHVR9We"
+      },
+      "href" : "https://api.spotify.com/v1/artists/41rVuRHYAiH7ltBTHVR9We",
+      "id" : "41rVuRHYAiH7ltBTHVR9We",
+      "name" : "Slushii",
+      "type" : "artist",
+      "uri" : "spotify:artist:41rVuRHYAiH7ltBTHVR9We"
+    } ],
+    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "disc_number" : 1,
+    "duration_ms" : 200008,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "TCACO1620368"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/7c5h7ZlLFcZoFBvFxfvKSH"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/7c5h7ZlLFcZoFBvFxfvKSH",
+    "id" : "7c5h7ZlLFcZoFBvFxfvKSH",
+    "is_local" : false,
+    "name" : "Destiny",
+    "popularity" : 37,
+    "preview_url" : "https://p.scdn.co/mp3-preview/3c7c47b12962ab6af66fc7129494cf6012fdcf93?cid=d216da85562b446ab1e4d2511b927ae5",
+    "track_number" : 6,
+    "type" : "track",
+    "uri" : "spotify:track:7c5h7ZlLFcZoFBvFxfvKSH"
+  }, {
+    "album" : {
+      "album_type" : "ALBUM",
+      "artists" : [ {
+        "external_urls" : {
           "spotify" : "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer"
         },
         "href" : "https://api.spotify.com/v1/artists/6nxWCVXbOlEVRexSbLsTer",
@@ -2495,7 +2495,7 @@
     "id" : "7y9x9TlIF9eCcccxvZPzEj",
     "is_local" : false,
     "name" : "Insane feat. Moon Holiday",
-    "popularity" : 43,
+    "popularity" : 44,
     "preview_url" : "https://p.scdn.co/mp3-preview/c4610854d1b718832122dff260e1f41df45551d2?cid=d216da85562b446ab1e4d2511b927ae5",
     "track_number" : 7,
     "type" : "track",
@@ -2980,88 +2980,11 @@
     "id" : "3J0ZbecfqYszqlQJKYswVV",
     "is_local" : false,
     "name" : "Kakattekoiyo",
-    "popularity" : 40,
+    "popularity" : 36,
     "preview_url" : null,
     "track_number" : 3,
     "type" : "track",
     "uri" : "spotify:track:3J0ZbecfqYszqlQJKYswVV"
-  }, {
-    "album" : {
-      "album_type" : "SINGLE",
-      "artists" : [ {
-        "external_urls" : {
-          "spotify" : "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
-        },
-        "href" : "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
-        "id" : "23fqKkggKUBHNkbKtXEls4",
-        "name" : "Kygo",
-        "type" : "artist",
-        "uri" : "spotify:artist:23fqKkggKUBHNkbKtXEls4"
-      } ],
-      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/album/2sPYPyDFwgi1jrRTGhoxq2"
-      },
-      "href" : "https://api.spotify.com/v1/albums/2sPYPyDFwgi1jrRTGhoxq2",
-      "id" : "2sPYPyDFwgi1jrRTGhoxq2",
-      "images" : [ {
-        "height" : 640,
-        "url" : "https://i.scdn.co/image/ebefe4ed77be5e058321f02a358df368bd91c1e7",
-        "width" : 640
-      }, {
-        "height" : 300,
-        "url" : "https://i.scdn.co/image/1b373d6d41807abd5d1a97355244d33e58999588",
-        "width" : 300
-      }, {
-        "height" : 64,
-        "url" : "https://i.scdn.co/image/cf067323910ce9299788fd105495389227d155f9",
-        "width" : 64
-      } ],
-      "name" : "Stargazing - EP",
-      "release_date" : "2017-09-21",
-      "release_date_precision" : "day",
-      "total_tracks" : 5,
-      "type" : "album",
-      "uri" : "spotify:album:2sPYPyDFwgi1jrRTGhoxq2"
-    },
-    "artists" : [ {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
-      },
-      "href" : "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
-      "id" : "23fqKkggKUBHNkbKtXEls4",
-      "name" : "Kygo",
-      "type" : "artist",
-      "uri" : "spotify:artist:23fqKkggKUBHNkbKtXEls4"
-    }, {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/4xnihxcoXWK3UqryOSnbw5"
-      },
-      "href" : "https://api.spotify.com/v1/artists/4xnihxcoXWK3UqryOSnbw5",
-      "id" : "4xnihxcoXWK3UqryOSnbw5",
-      "name" : "Sasha Sloan",
-      "type" : "artist",
-      "uri" : "spotify:artist:4xnihxcoXWK3UqryOSnbw5"
-    } ],
-    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-    "disc_number" : 1,
-    "duration_ms" : 202280,
-    "explicit" : false,
-    "external_ids" : {
-      "isrc" : "SEBGA1700243"
-    },
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/track/4aSfgWmRa9KsISD4Jmx7QB"
-    },
-    "href" : "https://api.spotify.com/v1/tracks/4aSfgWmRa9KsISD4Jmx7QB",
-    "id" : "4aSfgWmRa9KsISD4Jmx7QB",
-    "is_local" : false,
-    "name" : "This Town (feat. Sasha Sloan)",
-    "popularity" : 71,
-    "preview_url" : "https://p.scdn.co/mp3-preview/123eaca875006aa2c8e3df7a423330365f630f35?cid=d216da85562b446ab1e4d2511b927ae5",
-    "track_number" : 4,
-    "type" : "track",
-    "uri" : "spotify:track:4aSfgWmRa9KsISD4Jmx7QB"
   }, {
     "album" : {
       "album_type" : "SINGLE",
@@ -3153,6 +3076,83 @@
       "album_type" : "SINGLE",
       "artists" : [ {
         "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
+        },
+        "href" : "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
+        "id" : "23fqKkggKUBHNkbKtXEls4",
+        "name" : "Kygo",
+        "type" : "artist",
+        "uri" : "spotify:artist:23fqKkggKUBHNkbKtXEls4"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2sPYPyDFwgi1jrRTGhoxq2"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2sPYPyDFwgi1jrRTGhoxq2",
+      "id" : "2sPYPyDFwgi1jrRTGhoxq2",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ebefe4ed77be5e058321f02a358df368bd91c1e7",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/1b373d6d41807abd5d1a97355244d33e58999588",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/cf067323910ce9299788fd105495389227d155f9",
+        "width" : 64
+      } ],
+      "name" : "Stargazing - EP",
+      "release_date" : "2017-09-21",
+      "release_date_precision" : "day",
+      "total_tracks" : 5,
+      "type" : "album",
+      "uri" : "spotify:album:2sPYPyDFwgi1jrRTGhoxq2"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"
+      },
+      "href" : "https://api.spotify.com/v1/artists/23fqKkggKUBHNkbKtXEls4",
+      "id" : "23fqKkggKUBHNkbKtXEls4",
+      "name" : "Kygo",
+      "type" : "artist",
+      "uri" : "spotify:artist:23fqKkggKUBHNkbKtXEls4"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4xnihxcoXWK3UqryOSnbw5"
+      },
+      "href" : "https://api.spotify.com/v1/artists/4xnihxcoXWK3UqryOSnbw5",
+      "id" : "4xnihxcoXWK3UqryOSnbw5",
+      "name" : "Sasha Sloan",
+      "type" : "artist",
+      "uri" : "spotify:artist:4xnihxcoXWK3UqryOSnbw5"
+    } ],
+    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "disc_number" : 1,
+    "duration_ms" : 202280,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "SEBGA1700243"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/4aSfgWmRa9KsISD4Jmx7QB"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/4aSfgWmRa9KsISD4Jmx7QB",
+    "id" : "4aSfgWmRa9KsISD4Jmx7QB",
+    "is_local" : false,
+    "name" : "This Town (feat. Sasha Sloan)",
+    "popularity" : 71,
+    "preview_url" : "https://p.scdn.co/mp3-preview/123eaca875006aa2c8e3df7a423330365f630f35?cid=d216da85562b446ab1e4d2511b927ae5",
+    "track_number" : 4,
+    "type" : "track",
+    "uri" : "spotify:track:4aSfgWmRa9KsISD4Jmx7QB"
+  }, {
+    "album" : {
+      "album_type" : "SINGLE",
+      "artists" : [ {
+        "external_urls" : {
           "spotify" : "https://open.spotify.com/artist/6hfwwpXqZPRC9CsKI7qtv1"
         },
         "href" : "https://api.spotify.com/v1/artists/6hfwwpXqZPRC9CsKI7qtv1",
@@ -3234,6 +3234,83 @@
     "track_number" : 8,
     "type" : "track",
     "uri" : "spotify:track:1cSpPl4FhWtft5fUTqRr8f"
+  }, {
+    "album" : {
+      "album_type" : "SINGLE",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/6mA4csYsYvf4Mq02PleZEV"
+        },
+        "href" : "https://api.spotify.com/v1/artists/6mA4csYsYvf4Mq02PleZEV",
+        "id" : "6mA4csYsYvf4Mq02PleZEV",
+        "name" : "20syl",
+        "type" : "artist",
+        "uri" : "spotify:artist:6mA4csYsYvf4Mq02PleZEV"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1o1xzDFARnFITN40px5GyS"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1o1xzDFARnFITN40px5GyS",
+      "id" : "1o1xzDFARnFITN40px5GyS",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ec3dd5999c27fe021498f3a5dfab747fc13ad2d6",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/30c1ad0cf8c9286ffe511d65f6249b81fba7d54f",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/96e7d28543c588f04d799781663afa98f71bb906",
+        "width" : 64
+      } ],
+      "name" : "Motifs - EP",
+      "release_date" : "2014-06-09",
+      "release_date_precision" : "day",
+      "total_tracks" : 5,
+      "type" : "album",
+      "uri" : "spotify:album:1o1xzDFARnFITN40px5GyS"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6mA4csYsYvf4Mq02PleZEV"
+      },
+      "href" : "https://api.spotify.com/v1/artists/6mA4csYsYvf4Mq02PleZEV",
+      "id" : "6mA4csYsYvf4Mq02PleZEV",
+      "name" : "20syl",
+      "type" : "artist",
+      "uri" : "spotify:artist:6mA4csYsYvf4Mq02PleZEV"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6DAWpc35NCzRwRQKSYIaCP"
+      },
+      "href" : "https://api.spotify.com/v1/artists/6DAWpc35NCzRwRQKSYIaCP",
+      "id" : "6DAWpc35NCzRwRQKSYIaCP",
+      "name" : "Rita J",
+      "type" : "artist",
+      "uri" : "spotify:artist:6DAWpc35NCzRwRQKSYIaCP"
+    } ],
+    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "disc_number" : 1,
+    "duration_ms" : 265461,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "FR9T31400005"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/0bxoiLuzBhL2B3ODrAU6cp"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/0bxoiLuzBhL2B3ODrAU6cp",
+    "id" : "0bxoiLuzBhL2B3ODrAU6cp",
+    "is_local" : false,
+    "name" : "Voices (feat. Rita J)",
+    "popularity" : 53,
+    "preview_url" : "https://p.scdn.co/mp3-preview/543ec058d86bae92d565588dab784543952f2b93?cid=d216da85562b446ab1e4d2511b927ae5",
+    "track_number" : 5,
+    "type" : "track",
+    "uri" : "spotify:track:0bxoiLuzBhL2B3ODrAU6cp"
   }, {
     "album" : {
       "album_type" : "ALBUM",
@@ -3440,83 +3517,6 @@
     "uri" : "spotify:track:7FeeQVg6yID8laNUH0LlX8"
   }, {
     "album" : {
-      "album_type" : "SINGLE",
-      "artists" : [ {
-        "external_urls" : {
-          "spotify" : "https://open.spotify.com/artist/6mA4csYsYvf4Mq02PleZEV"
-        },
-        "href" : "https://api.spotify.com/v1/artists/6mA4csYsYvf4Mq02PleZEV",
-        "id" : "6mA4csYsYvf4Mq02PleZEV",
-        "name" : "20syl",
-        "type" : "artist",
-        "uri" : "spotify:artist:6mA4csYsYvf4Mq02PleZEV"
-      } ],
-      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/album/1o1xzDFARnFITN40px5GyS"
-      },
-      "href" : "https://api.spotify.com/v1/albums/1o1xzDFARnFITN40px5GyS",
-      "id" : "1o1xzDFARnFITN40px5GyS",
-      "images" : [ {
-        "height" : 640,
-        "url" : "https://i.scdn.co/image/ec3dd5999c27fe021498f3a5dfab747fc13ad2d6",
-        "width" : 640
-      }, {
-        "height" : 300,
-        "url" : "https://i.scdn.co/image/30c1ad0cf8c9286ffe511d65f6249b81fba7d54f",
-        "width" : 300
-      }, {
-        "height" : 64,
-        "url" : "https://i.scdn.co/image/96e7d28543c588f04d799781663afa98f71bb906",
-        "width" : 64
-      } ],
-      "name" : "Motifs - EP",
-      "release_date" : "2014-06-09",
-      "release_date_precision" : "day",
-      "total_tracks" : 5,
-      "type" : "album",
-      "uri" : "spotify:album:1o1xzDFARnFITN40px5GyS"
-    },
-    "artists" : [ {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/6mA4csYsYvf4Mq02PleZEV"
-      },
-      "href" : "https://api.spotify.com/v1/artists/6mA4csYsYvf4Mq02PleZEV",
-      "id" : "6mA4csYsYvf4Mq02PleZEV",
-      "name" : "20syl",
-      "type" : "artist",
-      "uri" : "spotify:artist:6mA4csYsYvf4Mq02PleZEV"
-    }, {
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/artist/6DAWpc35NCzRwRQKSYIaCP"
-      },
-      "href" : "https://api.spotify.com/v1/artists/6DAWpc35NCzRwRQKSYIaCP",
-      "id" : "6DAWpc35NCzRwRQKSYIaCP",
-      "name" : "Rita J",
-      "type" : "artist",
-      "uri" : "spotify:artist:6DAWpc35NCzRwRQKSYIaCP"
-    } ],
-    "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
-    "disc_number" : 1,
-    "duration_ms" : 265461,
-    "explicit" : false,
-    "external_ids" : {
-      "isrc" : "FR9T31400005"
-    },
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/track/0bxoiLuzBhL2B3ODrAU6cp"
-    },
-    "href" : "https://api.spotify.com/v1/tracks/0bxoiLuzBhL2B3ODrAU6cp",
-    "id" : "0bxoiLuzBhL2B3ODrAU6cp",
-    "is_local" : false,
-    "name" : "Voices (feat. Rita J)",
-    "popularity" : 53,
-    "preview_url" : "https://p.scdn.co/mp3-preview/543ec058d86bae92d565588dab784543952f2b93?cid=d216da85562b446ab1e4d2511b927ae5",
-    "track_number" : 5,
-    "type" : "track",
-    "uri" : "spotify:track:0bxoiLuzBhL2B3ODrAU6cp"
-  }, {
-    "album" : {
       "album_type" : "ALBUM",
       "artists" : [ {
         "external_urls" : {
@@ -3655,7 +3655,7 @@
   "total" : 50,
   "limit" : 50,
   "offset" : 0,
-  "href" : "https://api.spotify.com/v1/me/top/tracks?limit=50&offset=0&time_range=long_term",
   "previous" : null,
+  "href" : "https://api.spotify.com/v1/me/top/tracks?limit=50&offset=0&time_range=long_term",
   "next" : null
 }

@@ -3,6 +3,38 @@
   "items" : [ {
     "collaborative" : false,
     "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/1ip6CIpe4qBSKwX1Fq8p7O"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/1ip6CIpe4qBSKwX1Fq8p7O",
+    "id" : "1ip6CIpe4qBSKwX1Fq8p7O",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/b1d17c20cc8293e4be2765868ac4ad43d4818e33",
+      "width" : 640
+    } ],
+    "name" : "My Shazam Tracks",
+    "owner" : {
+      "display_name" : "firesquirrel66",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/firesquirrel66"
+      },
+      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+      "id" : "firesquirrel66",
+      "type" : "user",
+      "uri" : "spotify:user:firesquirrel66"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "Miw1NjFhNTk0YjE3NmU4ZmM5ZDU4YmE3ZTBjY2QwMWQ4MDY0NWUwMDQ0",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/1ip6CIpe4qBSKwX1Fq8p7O/tracks",
+      "total" : 1
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:1ip6CIpe4qBSKwX1Fq8p7O"
+  }, {
+    "collaborative" : false,
+    "external_urls" : {
       "spotify" : "https://open.spotify.com/playlist/1uAojnavPpCa1W4uTWZYFu"
     },
     "href" : "https://api.spotify.com/v1/playlists/1uAojnavPpCa1W4uTWZYFu",
@@ -25,10 +57,10 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "MjcyLDhkN2YwZWQ4NDg2ZGY2ZjVkMWMyOWJiMTI0ZDZiODc2ODgxMjA0NDI=",
+    "snapshot_id" : "Mjc0LDFjMjQ5ZDZjOGYwMzY4OTcxYzUyMTgzZDY3ZWU1ZDVhY2IyOTljYzE=",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/1uAojnavPpCa1W4uTWZYFu/tracks",
-      "total" : 619
+      "total" : 630
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:1uAojnavPpCa1W4uTWZYFu"
@@ -65,10 +97,10 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "NzIsNmYwOWZmNmQ5NjMzOTk2MWM0M2EyZGQwZWM3MzYwMjkyZjliOWQzYQ==",
+    "snapshot_id" : "OTAsZjRhNzVmM2Q3OGYxMGNlN2E5ZWU5YWNmZTJhMDZlZDM2MGVjMGI5Yg==",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/1IO0N0jjLkhcnD2gMBqMTv/tracks",
-      "total" : 87
+      "total" : 88
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:1IO0N0jjLkhcnD2gMBqMTv"
@@ -145,10 +177,10 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "NDYsNWIwMjgwMDVjNzNiMTQyZmIyOTc0YTQ5Yzg2ZTdiYTA0ZWQzMDViZg==",
+    "snapshot_id" : "NDgsMWY5NDFjZDYzNmRlNzdkMGQ1NTY3ZmZlYzIxMzhjMGU1ZDMzYzViOA==",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/1wx0mEDpbOYz7iyGSbytWw/tracks",
-      "total" : 37
+      "total" : 39
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:1wx0mEDpbOYz7iyGSbytWw"
@@ -185,10 +217,10 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "MTQsYjdiNjQ0ZjY5NzZlOGRhNTlkMDg2ZTE3YzI1N2QyMjMyNDFjZjZmZA==",
+    "snapshot_id" : "MTUsNDZjYzQxZGJiNmI1ODAwMjdhYjViMGJhODU4MTI4MDVmYTE5M2RhZQ==",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/6niNPELssccpLVkhptjN01/tracks",
-      "total" : 16
+      "total" : 17
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:6niNPELssccpLVkhptjN01"
@@ -261,5 +293,5 @@
   "next" : null,
   "offset" : 0,
   "previous" : null,
-  "total" : 7
+  "total" : 8
 }
