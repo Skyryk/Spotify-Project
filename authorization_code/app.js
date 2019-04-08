@@ -7,6 +7,9 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
+//const Song = require('./class.js');
+//const BinarySearchTree = require('./class.js');
+
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
@@ -164,6 +167,76 @@ app.get('/refresh_token', function(req, res)
      });
 });
 
+class Song
+{
+     constructor(name, popularity)
+     {
+          this.name = name;
+          this.popularity = popularity;
+     }
+}
+
+class BinarySearchTree
+{
+     constructor(value)
+     {
+          this.value = value;
+          this.left = null;
+          this.right = null;
+          this.nodeCount = 1;
+     }
+
+     insertSong(value)
+     {
+          let direction;
+          if(value >= this.value.popularity)
+          {
+               direction = 'left';
+          }
+          else
+          {
+               direction = 'right';
+          }
+
+          if (direction === 'left' && this.left === null)
+          {
+               this.nodeCount++;
+               this.left = new BinarySearchTree(value);
+          }
+          else if (direction === 'left' && this.left)
+          {
+               this.left.insertSong(value);
+          }
+          else if (direction === 'right' && this.right === null)
+          {
+               this.nodeCount++;
+               this.right = new BinarySearchTree(value);
+          }
+          else
+          {
+               this.right.insertSong(value);
+          }
+     }
+
+     printInOrder(callback)
+     {
+          //accepts a callback and executes it on every value contained in the tree.
+          function recurse(bst) {
+               callback.call(bst, bst.value)
+
+               if (bst.left !== undefined) {
+                    recurse(bst.left)
+               }
+
+               if (bst.right !== undefined) {
+                    recurse(bst.right);
+               }
+          }
+
+          recurse(this);
+     }
+}
+
 app.get('/grap_top_artists', function(req, res)
 {
      // requesting access token from refresh token
@@ -185,7 +258,7 @@ app.get('/grap_top_artists', function(req, res)
           {
                var access_token = body.access_token;
 
-               getUserTop("tracks", access_token, 50, "long_term", 0, function(res)
+               getUserTop("tracks", access_token, 50, "short_term", 0, function(res)
                {
                     let data_loc = __dirname + '\\JSON_Files\\usersTopSongs.json';
 
@@ -202,11 +275,24 @@ app.get('/grap_top_artists', function(req, res)
                          // parse json
                          var jsonParsed = JSON.parse(jsonData);
 
+                         // song and BST objects
+                         var song;
+                         var tree;
+
                          // access elements
                          console.log("Printing Users Top 50 songs");
                          console.log("---------------------");
                          for(var item in jsonParsed.items)
                          {
+                              song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity);
+                              if(tree == null)
+                              {
+                                   tree = new BinarySearchTree(song);
+                              }
+                              else
+                              {
+                                   tree.insertSong(song);
+                              }
                               console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
                          }
                          console.log("---------------------");
@@ -214,6 +300,7 @@ app.get('/grap_top_artists', function(req, res)
                          if(!err)
                          {
                               console.log("Parsed the JSON file and printed data succesfully");
+                              tree.printInOrder(tree);
                          }
                     });
                })
