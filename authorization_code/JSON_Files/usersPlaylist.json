@@ -3,38 +3,6 @@
   "items" : [ {
     "collaborative" : false,
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/playlist/1ip6CIpe4qBSKwX1Fq8p7O"
-    },
-    "href" : "https://api.spotify.com/v1/playlists/1ip6CIpe4qBSKwX1Fq8p7O",
-    "id" : "1ip6CIpe4qBSKwX1Fq8p7O",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/b1d17c20cc8293e4be2765868ac4ad43d4818e33",
-      "width" : 640
-    } ],
-    "name" : "My Shazam Tracks",
-    "owner" : {
-      "display_name" : "firesquirrel66",
-      "external_urls" : {
-        "spotify" : "https://open.spotify.com/user/firesquirrel66"
-      },
-      "href" : "https://api.spotify.com/v1/users/firesquirrel66",
-      "id" : "firesquirrel66",
-      "type" : "user",
-      "uri" : "spotify:user:firesquirrel66"
-    },
-    "primary_color" : null,
-    "public" : true,
-    "snapshot_id" : "Miw1NjFhNTk0YjE3NmU4ZmM5ZDU4YmE3ZTBjY2QwMWQ4MDY0NWUwMDQ0",
-    "tracks" : {
-      "href" : "https://api.spotify.com/v1/playlists/1ip6CIpe4qBSKwX1Fq8p7O/tracks",
-      "total" : 1
-    },
-    "type" : "playlist",
-    "uri" : "spotify:playlist:1ip6CIpe4qBSKwX1Fq8p7O"
-  }, {
-    "collaborative" : false,
-    "external_urls" : {
       "spotify" : "https://open.spotify.com/playlist/1uAojnavPpCa1W4uTWZYFu"
     },
     "href" : "https://api.spotify.com/v1/playlists/1uAojnavPpCa1W4uTWZYFu",
@@ -177,7 +145,7 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "NDksYWZjNzAxMjYyYjNlNmYxZTNjNjZjNWRmNmZhMDNlNjE2MTg0Yjc4Yw==",
+    "snapshot_id" : "NzksOWVhMmVjNTkxZGRjOWE2NjhkOTRiOTYyOWFmMWU5MTYyNDA0NDc5MA==",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/1wx0mEDpbOYz7iyGSbytWw/tracks",
       "total" : 58
@@ -293,5 +261,5 @@
   "next" : null,
   "offset" : 0,
   "previous" : null,
-  "total" : 8
+  "total" : 7
 }

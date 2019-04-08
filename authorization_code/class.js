@@ -1,54 +1,92 @@
 class Song
 {
-     constructor(name, popularity)
+     constructor(name, popularity, id)
      {
           this.name = name;
           this.popularity = popularity;
+          this.id = id;
+     }
+}
+
+class Node
+{
+     constructor(data)
+     {
+          this.data = data;
+          this.left = null;
+          this.right = null;
      }
 }
 
 class BinarySearchTree
 {
-     constructor(value)
+     constructor()
      {
-          this.value = value;
-          this.left = null;
-          this.right = null;
-          this.nodeCount = 1;
+          this.root = null;
      }
 
-     insertSong(value)
+     insert(song)
      {
-          let direction;
-          if(value >= this.value.popularity)
-          {
-               direction = 'left';
-          }
-          else
-          {
-               direction = 'right';
-          }
+          var newNode = new Node(song);
 
-          if (direction === 'left' && this.left === null)
+          if(this.root === null)
           {
-               this.nodeCount++;
-               this.left = new BinarySearchTree(value);
-          }
-          else if (direction === 'left' && this.left)
-          {
-               this.left.insertSong(value);
-          }
-          else if (direction === 'right' && this.right === null)
-          {
-               this.nodeCount++;
-               this.right = new BinarySearchTree(value);
+               this.root = newNode;
           }
           else
           {
-               this.right.insertSong(value);
+               this.insertNode(this.root, newNode);
           }
+     }
+
+     insertNode(node, newNode)
+     {
+          //If the songs popularity rating is greater or equal move too the left
+          if(newNode.data.popularity >= node.data.popularity)
+          {
+               //If there is not node too the left...
+               if(node.left === null)
+               {
+                    node.left = newNode;
+               }
+               //If there is a node keep looking for an open space
+               else
+               {
+                    this.insertNode(node.left, newNode);
+               }
+          }
+          //If the songs popularity rating is less then the current node
+          else
+          {
+               //If there is node too the left...
+               if(node.right === null)
+               {
+                    node.right = newNode;
+               }
+               //If there is a node keep looking for an open space
+               else
+               {
+                    this.insertNode(node.right, newNode);
+               }
+          }
+     }
+
+     printInOrder(node)
+     {
+          if(node !== null)
+          {
+               this.printInOrder(node.left);
+               console.log(node.data.name + "=" + node.data.popularity);
+               this.printInOrder(node.right);
+          }
+     }
+
+     getRootNode()
+     {
+          return this.root;
      }
 }
 
-module.exports = BinarySearchTree;
-module.exports = Song;
+exports.Song = Song;
+exports.Node = Node;
+exports.BinarySearchTree = BinarySearchTree

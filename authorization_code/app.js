@@ -7,8 +7,10 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-//const Song = require('./class.js');
-//const BinarySearchTree = require('./class.js');
+const Class = require('./class.js');
+const Song = Class.Song;
+const Node = Class.Node;
+const BinarySearchTree = Class.BinarySearchTree;
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
@@ -53,7 +55,7 @@ app.get('/login', function (req, res)
     res.cookie(stateKey, state);
 
     // your application requests authorization
-    var scope = 'user-read-private user-read-email user-read-recently-played user-top-read user-library-read';
+    var scope = 'user-read-private user-read-email user-read-recently-played user-top-read user-library-read playlist-modify-private playlist-modify-public';
     res.redirect('https://accounts.spotify.com/authorize?' +
         querystring.stringify(
         {
@@ -167,76 +169,6 @@ app.get('/refresh_token', function(req, res)
      });
 });
 
-class Song
-{
-     constructor(name, popularity)
-     {
-          this.name = name;
-          this.popularity = popularity;
-     }
-}
-
-class BinarySearchTree
-{
-     constructor(value)
-     {
-          this.value = value;
-          this.left = null;
-          this.right = null;
-          this.nodeCount = 1;
-     }
-
-     insertSong(value)
-     {
-          let direction;
-          if(value >= this.value.popularity)
-          {
-               direction = 'left';
-          }
-          else
-          {
-               direction = 'right';
-          }
-
-          if (direction === 'left' && this.left === null)
-          {
-               this.nodeCount++;
-               this.left = new BinarySearchTree(value);
-          }
-          else if (direction === 'left' && this.left)
-          {
-               this.left.insertSong(value);
-          }
-          else if (direction === 'right' && this.right === null)
-          {
-               this.nodeCount++;
-               this.right = new BinarySearchTree(value);
-          }
-          else
-          {
-               this.right.insertSong(value);
-          }
-     }
-
-     printInOrder(callback)
-     {
-          //accepts a callback and executes it on every value contained in the tree.
-          function recurse(bst) {
-               callback.call(bst, bst.value)
-
-               if (bst.left !== undefined) {
-                    recurse(bst.left)
-               }
-
-               if (bst.right !== undefined) {
-                    recurse(bst.right);
-               }
-          }
-
-          recurse(this);
-     }
-}
-
 app.get('/grap_top_artists', function(req, res)
 {
      // requesting access token from refresh token
@@ -251,6 +183,7 @@ app.get('/grap_top_artists', function(req, res)
           },
           json: true
      };
+     var songArray = [];
 
      request.post(authOptions, function(error, response, body)
      {
@@ -276,31 +209,25 @@ app.get('/grap_top_artists', function(req, res)
                          var jsonParsed = JSON.parse(jsonData);
 
                          // song and BST objects
-                         var song;
-                         var tree;
+                         let song;
+                         let tree = new BinarySearchTree();
 
-                         // access elements
-                         console.log("Printing Users Top 50 songs");
-                         console.log("---------------------");
+                         // For each song in file put into BST
                          for(var item in jsonParsed.items)
                          {
-                              song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity);
-                              if(tree == null)
-                              {
-                                   tree = new BinarySearchTree(song);
-                              }
-                              else
-                              {
-                                   tree.insertSong(song);
-                              }
-                              console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
+                              //Create a new song object
+                              song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity, jsonParsed.items[item].id);
+                              tree.insert(song); //Add song to BST
+                              songArray.push('spotify:track:' + song.id);
+                              //console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
                          }
-                         console.log("---------------------");
 
                          if(!err)
                          {
                               console.log("Parsed the JSON file and printed data succesfully");
-                              tree.printInOrder(tree);
+                              //console.log(songArray.toString());
+                              addSongToPlaylist("1wx0mEDpbOYz7iyGSbytWw", songArray.toString(), access_token)
+                              //tree.printInOrder(tree.getRootNode());
                          }
                     });
                })
@@ -322,6 +249,26 @@ app.get('/grap_top_artists', function(req, res)
           }
      });
 });
+
+function addSongToPlaylist(playlistID, songID, access_token)
+{
+     if (access_token != null)
+     {
+          const options =
+          {
+               url: 'https://api.spotify.com/v1/playlists/' + playlistID + '/tracks?' + querystring.stringify(
+               {
+                    "uris": songID
+               }),
+               headers:
+               {
+                    'Authorization': 'Bearer ' + access_token
+               }
+          }
+
+          request.post(options);
+     }
+}
 
 //Thomas Young's AuxJockey repository - https://github.com/thyo9470/AuxJockey.git
 function getUserTop(type, access_token, limit, time_range, offset, __callback=(res)=>{})
