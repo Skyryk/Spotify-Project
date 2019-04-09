@@ -1,3 +1,4 @@
+//Class for the song object
 class Song
 {
      constructor(name, popularity, id)
@@ -8,6 +9,7 @@ class Song
      }
 }
 
+//Class for the BST node
 class Node
 {
      constructor(data)
@@ -18,6 +20,7 @@ class Node
      }
 }
 
+//A bst for storing the users songs by their popularity
 class BinarySearchTree
 {
      constructor()
@@ -25,20 +28,25 @@ class BinarySearchTree
           this.root = null;
      }
 
+     //Inserts a song into the BST
      insert(song)
      {
+          //Creates a new node
           var newNode = new Node(song);
 
+          //If the root is null...
           if(this.root === null)
           {
                this.root = newNode;
           }
+          //If not insert the new node into the proper location
           else
           {
                this.insertNode(this.root, newNode);
           }
      }
 
+     //Insert a song node into the BST
      insertNode(node, newNode)
      {
           //If the songs popularity rating is greater or equal move too the left
@@ -71,6 +79,7 @@ class BinarySearchTree
           }
      }
 
+     //Print the tree in order based off popularity
      printInOrder(node)
      {
           if(node !== null)
@@ -81,12 +90,14 @@ class BinarySearchTree
           }
      }
 
+     //Returns the root node for traversing the tree
      getRootNode()
      {
           return this.root;
      }
 }
 
+//Exports the the classes for use in GrabAndCreate.js
 exports.Song = Song;
 exports.Node = Node;
 exports.BinarySearchTree = BinarySearchTree

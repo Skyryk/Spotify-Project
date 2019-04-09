@@ -7,17 +7,13 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-const Class = require('./class.js');
-const Song = Class.Song;
-const Node = Class.Node;
-const BinarySearchTree = Class.BinarySearchTree;
+const GrabAndCreate = require('./GrabAndCreate.js')
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-const fs = require('fs');
 
 var client_id = 'd216da85562b446ab1e4d2511b927ae5'; // Your client id
 var client_secret = '64ca3cfa5bb047df8cd7fd916393735e'; // Your secret
@@ -169,7 +165,7 @@ app.get('/refresh_token', function(req, res)
      });
 });
 
-app.get('/grap_top_artists', function(req, res)
+app.get('/make-safe-playlist', function(req, res)
 {
      // requesting access token from refresh token
      var refresh_token = req.query.refresh_token;
@@ -183,7 +179,6 @@ app.get('/grap_top_artists', function(req, res)
           },
           json: true
      };
-     var songArray = [];
 
      request.post(authOptions, function(error, response, body)
      {
@@ -191,56 +186,8 @@ app.get('/grap_top_artists', function(req, res)
           {
                var access_token = body.access_token;
 
-               getUserTop("tracks", access_token, 50, "short_term", 0, function(res)
-               {
-                    let data_loc = __dirname + '\\JSON_Files\\usersTopSongs.json';
-
-                    fs.writeFile(data_loc, res, 'utf8', function(err)
-                    {
-                         if (err) throw err;
-                    });
-
-                    fs.readFile(data_loc, function(err, data)
-                    {
-                         // json data
-                         var jsonData = data;
-
-                         // parse json
-                         var jsonParsed = JSON.parse(jsonData);
-
-                         // song and BST objects
-                         let song;
-                         let tree = new BinarySearchTree();
-
-                         // For each song in file put into BST
-                         for(var item in jsonParsed.items)
-                         {
-                              //Create a new song object
-                              song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity, jsonParsed.items[item].id);
-                              tree.insert(song); //Add song to BST
-                              songArray.push('spotify:track:' + song.id);
-                              //console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
-                         }
-
-                         if(!err)
-                         {
-                              console.log("Parsed the JSON file and printed data succesfully");
-                              //console.log(songArray.toString());
-                              addSongToPlaylist("1wx0mEDpbOYz7iyGSbytWw", songArray.toString(), access_token)
-                              //tree.printInOrder(tree.getRootNode());
-                         }
-                    });
-               })
-
-               getUserPlaylists("firesquirrel66", access_token, 50, 0, function(res)
-               {
-                    let data_loc = __dirname + '\\JSON_Files\\usersPlaylist.json';
-
-                    fs.writeFile(data_loc, res, 'utf8', function(err)
-                    {
-                         if (err) throw err;
-                    });
-               })
+               //Calls a funtion that gets the users data and creates the safe playlist
+               GrabAndCreate.grabAndCreate(access_token);
 
                res.send(
                {
@@ -250,91 +197,5 @@ app.get('/grap_top_artists', function(req, res)
      });
 });
 
-function addSongToPlaylist(playlistID, songID, access_token)
-{
-     if (access_token != null)
-     {
-          const options =
-          {
-               url: 'https://api.spotify.com/v1/playlists/' + playlistID + '/tracks?' + querystring.stringify(
-               {
-                    "uris": songID
-               }),
-               headers:
-               {
-                    'Authorization': 'Bearer ' + access_token
-               }
-          }
-
-          request.post(options);
-     }
-}
-
-//Thomas Young's AuxJockey repository - https://github.com/thyo9470/AuxJockey.git
-function getUserTop(type, access_token, limit, time_range, offset, __callback=(res)=>{})
-{
-     if (access_token != null)
-     {
-          const options =
-          {
-               url: 'https://api.spotify.com/v1/me/top/' + type + "?" + querystring.stringify(
-               {
-                    "time_range": time_range,
-                    "limit": limit,
-                    "offset": offset
-               }),
-               headers:
-               {
-                    'Authorization': 'Bearer ' + access_token
-               }
-          }
-
-          request( options, function(error, response, body)
-          {
-               if (!error && response.statusCode === 200)
-               {
-                    __callback(body);
-               }
-               else
-               {
-                    console.log( response.statusCode + ": " + error );
-                    __callback(null)
-               }
-          });
-     }
-}
-
-function getUserPlaylists(userID ,access_token, limit, offset, __callback=(res)=>{})
-{
-     if (access_token != null)
-     {
-          const options =
-          {
-               url: 'https://api.spotify.com/v1/users/' + userID + '/playlists' + "?" + querystring.stringify(
-               {
-                    "limit": limit,
-                    "offset": offset
-               }),
-               headers:
-               {
-                    'Authorization': 'Bearer ' + access_token
-               }
-          }
-
-          request( options, function(error, response, body)
-          {
-               if (!error && response.statusCode === 200)
-               {
-                    __callback(body);
-               }
-               else
-               {
-                    console.log( response.statusCode + ": " + error );
-                    __callback(null)
-               }
-          });
-     }
-}
-
-console.log('Listening on 8888');
+console.log('\x1b[95m%s\x1b[0m', 'Listening on 8888');
 app.listen(8888);

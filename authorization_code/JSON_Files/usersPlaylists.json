@@ -1,0 +1,39 @@
+{
+  "collaborative" : false,
+  "description" : null,
+  "external_urls" : {
+    "spotify" : "https://open.spotify.com/playlist/694AYRz41DLNfAsypTgRib"
+  },
+  "followers" : {
+    "href" : null,
+    "total" : 0
+  },
+  "href" : "https://api.spotify.com/v1/playlists/694AYRz41DLNfAsypTgRib",
+  "id" : "694AYRz41DLNfAsypTgRib",
+  "images" : [ ],
+  "name" : "Safe Playlist",
+  "owner" : {
+    "display_name" : "firesquirrel66",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/user/firesquirrel66"
+    },
+    "href" : "https://api.spotify.com/v1/users/firesquirrel66",
+    "id" : "firesquirrel66",
+    "type" : "user",
+    "uri" : "spotify:user:firesquirrel66"
+  },
+  "primary_color" : null,
+  "public" : false,
+  "snapshot_id" : "MSwxZTYwNjJhN2Q0MmEwYjU4YWJlNzk4YThjZDA5ZjcwZTQ5ODNiYzE2",
+  "tracks" : {
+    "href" : "https://api.spotify.com/v1/playlists/694AYRz41DLNfAsypTgRib/tracks",
+    "items" : [ ],
+    "limit" : 100,
+    "next" : null,
+    "offset" : 0,
+    "previous" : null,
+    "total" : 0
+  },
+  "type" : "playlist",
+  "uri" : "spotify:playlist:694AYRz41DLNfAsypTgRib"
+}
