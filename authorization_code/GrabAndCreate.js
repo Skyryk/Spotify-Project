@@ -60,50 +60,50 @@ function grabAndCreate(access_token)
                {
                     console.log('\x1b[31m%s\x1b[0m', "Failed to read the JSON data of saved music");
                }
+
+               //Creates a new playlist to store the saved music
+               createNewPlaylist(access_token, function(res)
+               {
+                    let data_loc = __dirname + '\\JSON_Files\\usersPlaylists.json';
+
+                    fs.writeFile(data_loc, res, 'utf8', function(err)
+                    {
+                         if (err)
+                         {
+                              throw err;
+                              console.log('\x1b[31m%s\x1b[0m', "Failed to save new playlist object to a JSON file");
+                         }
+                         else
+                         {
+                              console.log('\x1b[92m%s\x1b[0m', "Successfully Saved new playlist object to JSON file");
+                         }
+                    });
+
+                    fs.readFile(data_loc, function(err, data)
+                    {
+                         // json data
+                         var jsonData = data;
+
+                         // parse json
+                         var jsonParsed = JSON.parse(jsonData);
+
+                         playlistID = jsonParsed.id;
+
+                         //If there was no error then add songs in the songArray too the new playlist
+                         if(!err)
+                         {
+                              console.log('\x1b[92m%s\x1b[0m', "Successfully read the JSON data of new playlist");
+                              console.log('\x1b[95m%s\x1b[0m', "Safe Playlist ID = " + playlistID);
+                              console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
+                              addSongToPlaylist(playlistID, songArray.toString(), access_token)
+                         }
+                         else
+                         {
+                              console.log('\x1b[31m%s\x1b[0m', "Failed to read the JSON data of new playlist");
+                         }
+                    });
+               })
           });
-
-          //Creates a new playlist to store the saved music
-          createNewPlaylist(access_token, function(res)
-          {
-               let data_loc = __dirname + '\\JSON_Files\\usersPlaylists.json';
-
-               fs.writeFile(data_loc, res, 'utf8', function(err)
-               {
-                    if (err)
-                    {
-                         throw err;
-                         console.log('\x1b[31m%s\x1b[0m', "Failed to save new playlist object to a JSON file");
-                    }
-                    else
-                    {
-                         console.log('\x1b[92m%s\x1b[0m', "Successfully Saved new playlist object to JSON file");
-                    }
-               });
-
-               fs.readFile(data_loc, function(err, data)
-               {
-                    // json data
-                    var jsonData = data;
-
-                    // parse json
-                    var jsonParsed = JSON.parse(jsonData);
-
-                    playlistID = jsonParsed.id;
-
-                    //If there was no error then add songs in the songArray too the new playlist
-                    if(!err)
-                    {
-                         console.log('\x1b[92m%s\x1b[0m', "Successfully read the JSON data of new playlist");
-                         console.log('\x1b[95m%s\x1b[0m', "Safe Playlist ID = " + playlistID);
-                         console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
-                         addSongToPlaylist(playlistID, songArray.toString(), access_token)
-                    }
-                    else
-                    {
-                         console.log('\x1b[31m%s\x1b[0m', "Failed to read the JSON data of new playlist");
-                    }
-               });
-          })
      })
 }
 
@@ -134,6 +134,7 @@ function getUserTop(type, access_token, limit, time_range, offset, __callback=(r
                }
                else
                {
+                    console.log('\x1b[31m%s\x1b[0m', "Failed to get users top songs");
                     console.log('\x1b[31m%s\x1b[0m', response.statusCode + ": " + error );
                     __callback(null)
                }
@@ -170,6 +171,7 @@ function createNewPlaylist(access_token, __callback=(res)=>{})
                }
                else
                {
+                    console.log('\x1b[31m%s\x1b[0m', "Failed to created a new playlist in spotify");
                     console.log('\x1b[31m%s\x1b[0m', response.statusCode + ": " + error );
                     __callback(null)
                }
@@ -205,6 +207,7 @@ function addSongToPlaylist(playlistID, songID, access_token)
                }
                else
                {
+                    console.log('\x1b[31m%s\x1b[0m', "Failed to add songs to playlist " + playlistID + " in spotify");
                     console.log('\x1b[31m%s\x1b[0m', response.statusCode + ": " + error );
                }
           });
