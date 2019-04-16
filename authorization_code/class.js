@@ -26,6 +26,7 @@ class BinarySearchTree
      constructor()
      {
           this.root = null;
+          this.songArray = []; //An array to hold all of the songs IDS that will be added to the safe playlist
      }
 
      //Inserts a song into the BST
@@ -88,6 +89,21 @@ class BinarySearchTree
                console.log(node.data.name + "=" + node.data.popularity);
                this.printInOrder(node.right);
           }
+     }
+
+     findPopularSongs(node)
+     {
+          if(node !== null)
+          {
+               this.findPopularSongs(node.left);
+               if(node.data.popularity >= 70)
+               {
+                    this.songArray.push('spotify:track:' + node.data.id);
+               }
+               this.findPopularSongs(node.right);
+          }
+
+          return this.songArray;
      }
 
      //Returns the root node for traversing the tree

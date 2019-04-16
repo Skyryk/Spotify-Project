@@ -9,7 +9,7 @@ var fs = require('fs');
 
 function grabAndCreate(access_token)
 {
-     var songArray = []; //An array to hold all of the songs IDS that will be added to the safe playlist
+     var songString; //A string to hold all of the songs IDS that will be added to the safe playlist
      var playlistID; //The ID of the playlist we will add songs too
 
      //Gets the users saved music
@@ -48,9 +48,10 @@ function grabAndCreate(access_token)
                     //Create a new song object
                     song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity, jsonParsed.items[item].id);
                     tree.insert(song); //Add song to BST
-                    songArray.push('spotify:track:' + song.id);
                     //console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
                }
+
+               songString = tree.findPopularSongs(tree.getRootNode()).toString()
 
                if(!err)
                {
@@ -95,7 +96,14 @@ function grabAndCreate(access_token)
                               console.log('\x1b[92m%s\x1b[0m', "Successfully read the JSON data of new playlist");
                               console.log('\x1b[95m%s\x1b[0m', "Safe Playlist ID = " + playlistID);
                               console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
-                              addSongToPlaylist(playlistID, songArray.toString(), access_token)
+                              if(songString !== null)
+                              {
+                                   addSongToPlaylist(playlistID, songString, access_token);
+                              }
+                              else
+                              {
+                                   console.log('\x1b[31m%s\x1b[0m', "No songs in the song array");
+                              }
                          }
                          else
                          {
@@ -105,6 +113,59 @@ function grabAndCreate(access_token)
                })
           });
      })
+}
+
+function testUserSaved(access_token)
+{
+     var offset = 0;
+     var currentBatchTotal = 0;
+
+     do
+     {
+          getUserSaved(access_token, 50, offset, function(res)
+          {
+               // json data
+               var jsonData = res;
+
+               // parse json
+               var jsonParsed = JSON.parse(jsonData);
+          });
+     }
+     while(currentBatchTotal === 50);
+}
+
+function getUserSaved(access_token, limit, offset, __callback=(res)=>{})
+{
+     if (access_token != null)
+     {
+          const options =
+          {
+               url: 'https://api.spotify.com/v1/me/tracks/' + "?" + querystring.stringify(
+               {
+                    "limit": limit,
+                    "offset": offset
+               }),
+               headers:
+               {
+                    'Authorization': 'Bearer ' + access_token
+               }
+          }
+
+          request( options, function(error, response, body)
+          {
+               if (!error && response.statusCode === 200)
+               {
+                    console.log('\x1b[92m%s\x1b[0m', "Successfully retrived saved songs from spotify");
+                    __callback(body);
+               }
+               else
+               {
+                    console.log('\x1b[31m%s\x1b[0m', "Failed to get users saved songs");
+                    console.log('\x1b[31m%s\x1b[0m', response.statusCode + ": " + error );
+                    __callback(null)
+               }
+          });
+     }
 }
 
 function getUserTop(type, access_token, limit, time_range, offset, __callback=(res)=>{})
