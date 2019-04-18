@@ -9,7 +9,7 @@ var fs = require('fs');
 
 async function grabAndCreate(access_token)
 {
-     var songString; //A string to hold all of the songs IDS that will be added to the safe playlist
+     var songArray; //An Array to hold all of the songs IDS that will be added to the safe playlist
      var playlistID; //The ID of the playlist we will add songs too
      var tree = new BinarySearchTree();
 
@@ -24,15 +24,13 @@ async function grabAndCreate(access_token)
           //Runs the getUserSaved music and compleates it before countuing.
           let promise = new Promise((resolve, reject) =>
           {
-               getUserSaved(access_token, 1, offset, function(res)
+               getUserSaved(access_token, 50, offset, function(res)
                {
                     // json data
                     var jsonData = res;
 
                     // parse json
                     var jsonParsed = JSON.parse(jsonData);
-
-                    console.log(jsonParsed.items);
 
                     // song object
                     let song;
@@ -41,9 +39,9 @@ async function grabAndCreate(access_token)
                     {
                          currentBatchTotal++;
                          //Create a new song object
-                         song = new Song(jsonParsed.items[item].name, jsonParsed.items[item].popularity, jsonParsed.items[item].id);
+                         song = new Song(jsonParsed.items[item].track.name, jsonParsed.items[item].track.popularity, jsonParsed.items[item].track.id);
                          tree.insert(song); //Add song to BST
-                         //console.log(jsonParsed.items[item].name + " - Popularity=" + jsonParsed.items[item].popularity);
+                         //console.log(jsonParsed.items[item].track.name + " - Popularity=" + jsonParsed.items[item].track.popularity);
                     }
 
                     offset += currentBatchTotal;
@@ -56,19 +54,12 @@ async function grabAndCreate(access_token)
           //Waits untill the get getUserSaved function is done with all its tasks
           let result = await promise;
      }
-     while(currentBatchTotal === 0);
+     while(currentBatchTotal === 50);
 
-     let promise = new Promise((resolve, reject) =>
-     {
-          songString = tree.findPopularSongs(tree.getRootNode());
-          //Resolves the promise
-          setTimeout(() => resolve("done!"))
-     });
-     //Waits untill the get getUserSaved function is done with all its tasks
-     let result = await promise;
+     songArray = tree.findPopularSongs(tree.getRootNode());
 
      //Creates a new playlist to store the saved music
-     /*createNewPlaylist(access_token, function(res)
+     createNewPlaylist(access_token, function(res)
      {
           let data_loc = __dirname + '\\JSON_Files\\usersPlaylists.json';
 
@@ -101,9 +92,9 @@ async function grabAndCreate(access_token)
                     console.log('\x1b[92m%s\x1b[0m', "Successfully read the JSON data of new playlist");
                     console.log('\x1b[95m%s\x1b[0m', "Safe Playlist ID = " + playlistID);
                     console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
-                    if(songString !== '')
+                    if(songArray !== null)
                     {
-                         addSongToPlaylist(playlistID, songString, access_token);
+                         addSongToPlaylist(playlistID, songArray.toString(), access_token);
                     }
                     else
                     {
@@ -115,7 +106,7 @@ async function grabAndCreate(access_token)
                     console.log('\x1b[91m%s\x1b[0m', "Failed to read the JSON data of new playlist");
                }
           });
-     })*/
+     })
 }
 
 function getUserSaved(access_token, limit, offset, __callback=(res)=>{})
