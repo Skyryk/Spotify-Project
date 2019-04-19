@@ -1,9 +1,10 @@
 //Class for the song object
 class Song
 {
-     constructor(name, popularity, id)
+     constructor(name, artist, popularity, id)
      {
           this.name = name;
+          this.artist = artist;
           this.popularity = popularity;
           this.id = id;
      }

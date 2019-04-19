@@ -187,7 +187,8 @@ app.get('/make-safe-playlist', function(req, res)
                var access_token = body.access_token;
 
                //Calls a funtion that gets the users data and creates the safe playlist
-               GrabAndCreate.grabAndCreate(access_token);
+               //GrabAndCreate.grabAndCreate(access_token);
+               GrabAndCreate.hashTest(access_token);
 
                res.send(
                {

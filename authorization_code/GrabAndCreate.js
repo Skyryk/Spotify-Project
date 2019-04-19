@@ -1,11 +1,45 @@
-const Class = require('./class.js');
-const Song = Class.Song;
-const Node = Class.Node;
-const BinarySearchTree = Class.BinarySearchTree;
+const BST = require('./BST.js');
+const Song = BST.Song;
+const Node = BST.Node;
+const BinarySearchTree = BST.BinarySearchTree;
+
+const Hash = require('./hash.js');
+const HashTable = Hash.HashTable;
 
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var fs = require('fs');
+
+function hashTest(access_token)
+{
+     var hashTable = new HashTable();
+
+     getUserSaved(access_token, 50, 0, function(res)
+     {
+          // json data
+          var jsonData = res;
+
+          // parse json
+          var jsonParsed = JSON.parse(jsonData);
+
+          // song object
+          let song;
+
+          for(var item in jsonParsed.items)
+          {
+               //Create a new song object
+               song = new Song
+               (
+                    jsonParsed.items[item].track.name,
+                    "",
+                    jsonParsed.items[item].track.popularity,
+                    jsonParsed.items[item].track.id
+               );
+               hashTable.insert(song); //Add song to BST
+               //console.log(jsonParsed.items[item].track.name + " - Popularity=" + jsonParsed.items[item].track.popularity);
+          }
+     });
+}
 
 async function grabAndCreate(access_token)
 {
@@ -39,7 +73,13 @@ async function grabAndCreate(access_token)
                     {
                          currentBatchTotal++;
                          //Create a new song object
-                         song = new Song(jsonParsed.items[item].track.name, jsonParsed.items[item].track.popularity, jsonParsed.items[item].track.id);
+                         song = new Song
+                         (
+                              jsonParsed.items[item].track.name,
+                              "",
+                              jsonParsed.items[item].track.popularity,
+                              jsonParsed.items[item].track.id
+                         );
                          tree.insert(song); //Add song to BST
                          //console.log(jsonParsed.items[item].track.name + " - Popularity=" + jsonParsed.items[item].track.popularity);
                     }
@@ -59,7 +99,7 @@ async function grabAndCreate(access_token)
      songArray = tree.findPopularSongs(tree.getRootNode());
 
      //Creates a new playlist to store the saved music
-     createNewPlaylist(access_token, function(res)
+     /*createNewPlaylist(access_token, function(res)
      {
           let data_loc = __dirname + '\\JSON_Files\\usersPlaylists.json';
 
@@ -106,7 +146,7 @@ async function grabAndCreate(access_token)
                     console.log('\x1b[91m%s\x1b[0m', "Failed to read the JSON data of new playlist");
                }
           });
-     })
+     })*/
 }
 
 function getUserSaved(access_token, limit, offset, __callback=(res)=>{})
@@ -252,3 +292,4 @@ function addSongToPlaylist(playlistID, songID, access_token)
 
 //Exports this grabAndCreate function so it can called in app.js
 exports.grabAndCreate = grabAndCreate;
+exports.hashTest = hashTest;
