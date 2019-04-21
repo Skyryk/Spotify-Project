@@ -165,7 +165,7 @@ app.get('/refresh_token', function(req, res)
      });
 });
 
-app.get('/make-safe-playlist', function(req, res)
+app.get('/make-safe-playlist-with-tracks', function(req, res)
 {
      // requesting access token from refresh token
      var refresh_token = req.query.refresh_token;
@@ -185,10 +185,67 @@ app.get('/make-safe-playlist', function(req, res)
           if (!error && response.statusCode === 200)
           {
                var access_token = body.access_token;
+               var userID
+               var options =
+               {
+                    url: 'https://api.spotify.com/v1/me',
+                    headers: { 'Authorization': 'Bearer ' + access_token },
+                    json: true
+               };
 
-               //Calls a funtion that gets the users data and creates the safe playlist
-               //GrabAndCreate.grabAndCreate(access_token);
-               GrabAndCreate.hashTest(access_token);
+               // use the access token to access the Spotify Web API
+               request.get(options, function(error, response, body)
+               {
+                    userID = body.id;
+
+                    //Calls a funtion that gets the users data and creates the safe playlist
+                    GrabAndCreate.grabAndCreateWithTracks(access_token, userID);
+               });
+
+               res.send(
+               {
+                    'access_token': access_token
+               });
+          }
+     });
+});
+
+app.get('/make-safe-playlist-with-artists', function(req, res)
+{
+     // requesting access token from refresh token
+     var refresh_token = req.query.refresh_token;
+     var authOptions =
+     {
+          url: 'https://accounts.spotify.com/api/token',
+          headers: { 'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64')) },
+          form: {
+               grant_type: 'refresh_token',
+               refresh_token: refresh_token
+          },
+          json: true
+     };
+
+     request.post(authOptions, function(error, response, body)
+     {
+          if (!error && response.statusCode === 200)
+          {
+               var access_token = body.access_token;
+               var userID
+               var options =
+               {
+                    url: 'https://api.spotify.com/v1/me',
+                    headers: { 'Authorization': 'Bearer ' + access_token },
+                    json: true
+               };
+
+               // use the access token to access the Spotify Web API
+               request.get(options, function(error, response, body)
+               {
+                    userID = body.id;
+
+                    //Calls a funtion that gets the users data and creates the safe playlist
+                    GrabAndCreate.grabAndCreateWithArtists(access_token, userID);
+               });
 
                res.send(
                {

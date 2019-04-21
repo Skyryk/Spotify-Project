@@ -15,9 +15,9 @@ class Artist
 //A hashtable for storing artists
 class HashTable
 {
-     constructor()
+     constructor(size)
      {
-          this.size = 100;
+          this.size = size;
           this.storage = new Array(this.SIZE);
      }
 
@@ -35,7 +35,7 @@ class HashTable
           return Math.abs(hash) % size ;
      }
 
-     //Insets a string into the hash table
+     //Insets a song object into the hash table
      insert(value)
      {
           //Gets the index value
@@ -49,7 +49,7 @@ class HashTable
 
                //Creates a new artist object
                let artist = new Artist(value.artist)
-               artist.addSongID(value.id)
+               artist.addSongID('spotify:track:' + value.id)
 
                //Adds the artist too the hash table
                artists.push(artist);
@@ -60,16 +60,29 @@ class HashTable
           {
                let artist = this.get(value.artist);
 
+               //console.log(artist);
+               //console.log(value.id);
+
                if(artist !== null)
                {
-                    artist.addSongID(value.id);
+                    artist.addSongID('spotify:track:' + value.id);
                }
                else
                {
+                    //Create new artist Object
+                    let artist = new Artist(value.artist)
+                    artist.addSongID('spotify:track:' + value.id)
+
                     //Push back the new artist
-                    this.storage[index].push(value);
+                    this.storage[index].push(artist);
                }
           }
+     }
+
+     //Prints in the console all the contents of storage
+     showall()
+     {
+          console.log(this.storage);
      }
 
      //Returns an artist
@@ -83,6 +96,8 @@ class HashTable
                if(this.storage[index][artist].name === value)
                     return this.storage[index][artist];
           }
+
+          return null;
      }
 }
 

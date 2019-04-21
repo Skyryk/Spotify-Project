@@ -46,7 +46,8 @@
                     <div id="oauth">
                     </div>
                     <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
-                    <button class="btn btn-default" id="make-safe-playlist">Make safe playlist</button>
+                    <button class="btn btn-default" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
+                    <button class="btn btn-default" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
                </div>
           </div>
 
@@ -171,11 +172,31 @@
                               });
                          }, false);
 
-                         document.getElementById('make-safe-playlist').addEventListener('click', function()
+                         document.getElementById('make-safe-playlist-with-tracks').addEventListener('click', function()
                          {
                               $.ajax(
                               {
-                                   url: '/make-safe-playlist',
+                                   url: '/make-safe-playlist-with-tracks',
+                                   data:
+                                   {
+                                        'refresh_token': refresh_token
+                                   }
+                              }).done(function(data)
+                              {
+                                   access_token = data.access_token;
+                                   oauthPlaceholder.innerHTML = oauthTemplate(
+                                   {
+                                        access_token: access_token,
+                                        refresh_token: refresh_token
+                                   });
+                              });
+                         }, false);
+
+                         document.getElementById('make-safe-playlist-with-artists').addEventListener('click', function()
+                         {
+                              $.ajax(
+                              {
+                                   url: '/make-safe-playlist-with-artists',
                                    data:
                                    {
                                         'refresh_token': refresh_token

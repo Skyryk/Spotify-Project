@@ -1,3 +1,6 @@
+const Hash = require('./hash.js');
+const HashTable = Hash.HashTable;
+
 //Class for the song object
 class Song
 {
@@ -28,6 +31,7 @@ class BinarySearchTree
      {
           this.root = null;
           this.songArray = []; //An array to hold all of the songs IDS that will be added to the safe playlist
+          this.artistHash = new HashTable(30);
      }
 
      //Inserts a song into the BST
@@ -105,6 +109,21 @@ class BinarySearchTree
           }
 
           return this.songArray;
+     }
+
+     findPopularArtists(node)
+     {
+          if(node !== null)
+          {
+               this.findPopularArtists(node.left);
+               if(node.data.popularity >= 70)
+               {
+                    this.artistHash.insert(node.data);
+               }
+               this.findPopularArtists(node.right);
+          }
+
+          return this.artistHash;
      }
 
      //Returns the root node for traversing the tree
