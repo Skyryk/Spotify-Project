@@ -31,7 +31,7 @@ class BinarySearchTree
      {
           this.root = null;
           this.songArray = []; //An array to hold all of the songs IDS that will be added to the safe playlist
-          this.artistHash = new HashTable(30);
+          this.artistHash = new HashTable(30); //A hashtable used for storing most popular artists
      }
 
      //Inserts a song into the BST
@@ -96,6 +96,7 @@ class BinarySearchTree
           }
      }
 
+     //Finds the most popular songs and adds them too an array of string
      findPopularSongs(node)
      {
           if(node !== null)
@@ -111,6 +112,7 @@ class BinarySearchTree
           return this.songArray;
      }
 
+     //Finds the artists of the most popular songs and stores them in a hash table
      findPopularArtists(node)
      {
           if(node !== null)

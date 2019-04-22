@@ -1,3 +1,4 @@
+//An object for storing an atrist and their songs
 class Artist
 {
      constructor(name)

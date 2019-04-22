@@ -10,9 +10,10 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var fs = require('fs');
 
+//Grabs the users saved music and then adds the most popular songs
 function grabAndCreateWithTracks(access_token, userID)
 {
-     var songArray; //An Array to hold all of the songs IDS that will be added to the safe playlist
+     var songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
      var playlistID; //The ID of the playlist we will add songs too
      var tree = new BinarySearchTree();
      var hashTable = new HashTable(100);
@@ -27,6 +28,7 @@ function grabAndCreateWithTracks(access_token, userID)
           {
                let data_loc = __dirname + '\\JSON_Files\\usersPlaylists.json';
 
+               //Writes the data too a JSON files
                fs.writeFile(data_loc, res, 'utf8', function(err)
                {
                     if (err)
@@ -40,6 +42,7 @@ function grabAndCreateWithTracks(access_token, userID)
                     }
                });
 
+               //Reads the data from the JSON file
                fs.readFile(data_loc, function(err, data)
                {
                     // json data
@@ -48,7 +51,7 @@ function grabAndCreateWithTracks(access_token, userID)
                     // parse json
                     var jsonParsed = JSON.parse(jsonData);
 
-                    playlistID = jsonParsed.id;
+                    playlistID = jsonParsed.id; //Id of playlist we will add songs too
 
                     //If there was no error then add songs in the songArray too the new playlist
                     if(!err)
@@ -58,7 +61,8 @@ function grabAndCreateWithTracks(access_token, userID)
                          console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
                          if(songArray !== null)
                          {
-                              createURIForPlaylist(playlistID, songArray, access_token);
+                              //Splits the song array into more manigable sizes
+                              createURIForPlaylist(playlistID, songArray, access_token, true);
                          }
                          else
                          {
@@ -74,6 +78,7 @@ function grabAndCreateWithTracks(access_token, userID)
      });
 }
 
+//Grabs the users saved music and then adds the most popular artists
 function grabAndCreateWithArtists(access_token, userID)
 {
      var songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
@@ -136,7 +141,7 @@ function grabAndCreateWithArtists(access_token, userID)
                          console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
                          if(songArray !== null)
                          {
-                              createURIForPlaylist(playlistID, songArray, access_token);
+                              createURIForPlaylist(playlistID, songArray, access_token, false);
                          }
                          else
                          {
@@ -321,34 +326,63 @@ function createNewPlaylist(access_token, userID, __callback=(res)=>{})
      }
 }
 
-function createURIForPlaylist(playlistID, songArray, access_token)
+//Splits the songArray to add songs in 50 song intervals
+//PlaylistID - The id of the playlist we will add songs too
+//SongArray - The array of all the songs found in eralyier functions
+async function createURIForPlaylist(playlistID, songArray, access_token, tracks)
 {
      limitedSongArray = [];
      arrayCount = 0;
+     batch = 1;
 
+     //For each list of songs in the songArray...
      for(var song in songArray)
      {
-          for(var llsong in songArray[song])
+          if(tracks === true)
           {
-               limitedSongArray.push(songArray[song][llsong]);
+               limitedSongArray.push(songArray[song]); //Add the song to limited array
                arrayCount++;
+               //If the limited array of songs is 50 long...
                if(arrayCount === 50)
                {
-                    addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token);
+                    //Add that batch of 50 songs too the playlist and reset the limted array
+                    addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token, batch);
                     limitedSongArray = [];
                     arrayCount = 0;
+                    batch++;
+                    await new Promise((resolve, reject) => setTimeout(resolve, 500));
+               }
+          }
+          else
+          {
+               //For each song in the list of songs in the songArray...
+               for(var llsong in songArray[song])
+               {
+                    limitedSongArray.push(songArray[song][llsong]); //Add the song to limited array
+                    arrayCount++;
+                    //If the limited array of songs is 50 long...
+                    if(arrayCount === 50)
+                    {
+                         //Add that batch of 50 songs too the playlist and reset the limted array
+                         addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token, batch);
+                         limitedSongArray = [];
+                         arrayCount = 0;
+                         batch++;
+                         await new Promise((resolve, reject) => setTimeout(resolve, 500));
+                    }
                }
           }
      }
 
+     //Adds the last batch of songs too the playlist
      if(arrayCount !== 0)
-          addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token);
+          addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token, batch);
 }
 
 //Adds songs to a playlist in the users library
 //PlaylistID - the ID of the playlist to add songs too
 //SongID - A string containing all the songs you want to add to a playlist
-function addSongToPlaylist(playlistID, songID, access_token)
+function addSongToPlaylist(playlistID, songID, access_token, batch)
 {
      if (access_token != null)
      {
@@ -368,15 +402,15 @@ function addSongToPlaylist(playlistID, songID, access_token)
           {
                if (!error && response.statusCode === 200)
                {
-                    console.log('\x1b[92m%s\x1b[0m', "Successfully added songs to playlist " + playlistID + " in spotify");
+                    console.log('\x1b[92m%s\x1b[0m', "Successfully added songs to playlist " + playlistID + " in spotify [Batch:" + batch + "]");
                }
                else if (!error && response.statusCode === 201)
                {
-                    console.log('\x1b[92m%s\x1b[0m', "Successfully added songs to playlist " + playlistID + " in spotify");
+                    console.log('\x1b[92m%s\x1b[0m', "Successfully added songs to playlist " + playlistID + " in spotify [Batch:" + batch + "]");
                }
                else
                {
-                    console.log('\x1b[91m%s\x1b[0m', "Failed to add songs to playlist " + playlistID + " in spotify");
+                    console.log('\x1b[91m%s\x1b[0m', "Failed to add songs to playlist " + playlistID + " in spotify [Batch:" + batch + "]");
                     console.log('\x1b[91m%s\x1b[0m', response.statusCode + ": " + error );
                }
           });
