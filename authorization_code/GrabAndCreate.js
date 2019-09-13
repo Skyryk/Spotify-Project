@@ -18,6 +18,8 @@ function grabAndCreateWithTracks(access_token, userID)
      var tree = new BinarySearchTree();
      var hashTable = new HashTable(100);
 
+     console.log(userID);
+
      //Calls a function that grabs all of the users saved songs
      grabUsersMusic(access_token, tree, hashTable, function()
      {
@@ -33,8 +35,8 @@ function grabAndCreateWithTracks(access_token, userID)
                {
                     if (err)
                     {
-                         throw err;
                          console.log('\x1b[91m%s\x1b[0m', "Failed to save new playlist object to a JSON file");
+                         throw err;
                     }
                     else
                     {

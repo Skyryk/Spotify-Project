@@ -49,8 +49,8 @@ class HashTable
                let artists = [];
 
                //Creates a new artist object
-               let artist = new Artist(value.artist)
-               artist.addSongID('spotify:track:' + value.id)
+               let artist = new Artist(value.artist);
+               artist.addSongID('spotify:track:' + value.id);
 
                //Adds the artist too the hash table
                artists.push(artist);
@@ -71,8 +71,8 @@ class HashTable
                else
                {
                     //Create new artist Object
-                    let artist = new Artist(value.artist)
-                    artist.addSongID('spotify:track:' + value.id)
+                    let artist = new Artist(value.artist);
+                    artist.addSongID('spotify:track:' + value.id);
 
                     //Push back the new artist
                     this.storage[index].push(artist);

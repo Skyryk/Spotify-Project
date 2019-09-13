@@ -138,4 +138,4 @@ class BinarySearchTree
 //Exports the the classes for use in GrabAndCreate.js
 exports.Song = Song;
 exports.Node = Node;
-exports.BinarySearchTree = BinarySearchTree
+exports.BinarySearchTree = BinarySearchTree;

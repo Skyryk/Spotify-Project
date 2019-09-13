@@ -2,52 +2,22 @@
 <html>
      <head>
           <title>Example of the Authorization Code flow with Spotify</title>
-          <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-          <style type="text/css">
-               #login, #loggedin
-               {
-                    display: none;
-               }
-               .text-overflow
-               {
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    width: 500px;
-               }
-               body
-               {
-                    background-color: #1a1a1a;
-               }
-               h1
-               {
-                    color: #ffffff;
-               }
-               dt
-               {
-                    color: #ffffff;
-               }
-               dd
-               {
-                    color: #ffffff;
-               }
-          </style>
+          <link rel="stylesheet" href="stylesheet.css">
      </head>
 
      <body>
           <div class="container">
                <div id="login">
-                    <h1>This is an example of the Authorization Code flow</h1>
-                    <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+                    <a href="/login" class="btn">Log in with Spotify</a>
                </div>
                <div id="loggedin">
                     <div id="user-profile">
                     </div>
                     <div id="oauth">
                     </div>
-                    <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
-                    <button class="btn btn-default" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
-                    <button class="btn btn-default" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
+                    <button class="btn2" id="obtain-new-token">Obtain new token using the refresh token</button>
+                    <button class="btn2" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
+                    <button class="btn2" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
                </div>
           </div>
 
@@ -59,13 +29,13 @@
                     </div>
                     <div class="media-body">
                          <dl class="dl-horizontal">
-                              <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-                              <dt>Id</dt><dd>{{id}}</dd>
-                              <dt>Email</dt><dd>{{email}}</dd>
-                              <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-                              <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-                              <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-                              <dt>Country</dt><dd>{{country}}</dd>
+                              <dt>Display name: {{display_name}}</dt>
+                              <dt>Id: {{id}}</dt>
+                              <dt>Email: {{email}}</dt>
+                              <dt>Spotify URI: <a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dt>
+                              <dt>Link: <a href="{{href}}">{{href}}</a></dt>
+                              <dt>Profile Image: <a href="{{images.0.url}}">{{images.0.url}}</a></dt>
+                              <dt>Country: {{country}}</dt>
                          </dl>
                     </div>
                </div>
@@ -74,8 +44,8 @@
           <script id="oauth-template" type="text/x-handlebars-template">
                <h1>oAuth info</h1>
                <dl class="dl-horizontal">
-                    <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-                    <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}</dd>
+                    <dt class="text-overflow">Access token: {{access_token}}</dt>
+                    <dt class="text-overflow">Refresh token: {{refresh_token}}</dt>
                </dl>
           </script>
 

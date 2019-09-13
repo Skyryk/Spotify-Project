@@ -1,0 +1,83 @@
+#login
+{
+    display: none;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+#loggedin
+{
+    background-color: white;
+    display: none;
+    width: 50%;
+    text-align: center;
+    color: #000;
+    margin: auto;
+}
+.text-overflow
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30%;
+    margin: auto;
+}
+body
+{
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+    background-image: url("Skis.jpg");
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a
+{
+    color: #777;
+    text-decoration: none;
+}
+a:hover
+{
+    opacity: 1;
+    text-decoration: none;
+}
+.btn
+{
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    text-align: center;
+    background-color: #111;
+    opacity: .65;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+.btn2
+{
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    text-align: center;
+    background-color: #111;
+    opacity: .65;
+    color: #fff;
+    padding: 18px;
+    font-size: 15px;
+    letter-spacing: 5px;
+    border: none;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn2:hover
+{
+    background-color: black;
+}

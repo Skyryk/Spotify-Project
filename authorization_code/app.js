@@ -7,7 +7,7 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-const GrabAndCreate = require('./GrabAndCreate.js')
+const GrabAndCreate = require('./GrabAndCreate.js');
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
@@ -186,7 +186,7 @@ app.get('/make-safe-playlist-with-tracks', function(req, res)
           if (!error && response.statusCode === 200)
           {
                var access_token = body.access_token;
-               var userID
+               var userID;
                var options =
                {
                     url: 'https://api.spotify.com/v1/me',
@@ -231,7 +231,7 @@ app.get('/make-safe-playlist-with-artists', function(req, res)
           if (!error && response.statusCode === 200)
           {
                var access_token = body.access_token;
-               var userID
+               var userID;
                var options =
                {
                     url: 'https://api.spotify.com/v1/me',
@@ -244,7 +244,7 @@ app.get('/make-safe-playlist-with-artists', function(req, res)
                {
                     userID = body.id;
 
-                    //Calls a funtion that gets the users data and creates the safe playlist
+                    //Calls a function that gets the users data and creates the safe playlist
                     GrabAndCreate.grabAndCreateWithArtists(access_token, userID);
                });
 
