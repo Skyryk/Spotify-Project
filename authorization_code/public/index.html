@@ -1,189 +1,73 @@
-<!doctype html>
 <html>
-     <head>
-          <title>Example of the Authorization Code flow with Spotify</title>
-          <link rel="stylesheet" href="stylesheet.css">
-     </head>
+	<head>
+		<link type="text/css" rel="stylesheet" href="normalStyleSheet.css"/>
+	</head>
 
-     <body>
-          <div class="container">
-               <div id="login">
-                    <a href="/login" class="btn">Log in with Spotify</a>
-               </div>
-               <div id="loggedin">
-                    <div id="user-profile">
-                    </div>
-                    <div id="oauth">
-                    </div>
-                    <button class="btn2" id="obtain-new-token">Obtain new token using the refresh token</button>
-                    <button class="btn2" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
-                    <button class="btn2" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
-               </div>
-          </div>
+	<body>
 
-          <script id="user-profile-template" type="text/x-handlebars-template">
-               <h1>Logged in as {{display_name}}</h1>
-               <div class="media">
-                    <div class="pull-left">
-                         <img class="media-object" width="150" src="{{images.0.url}}" />
-                    </div>
-                    <div class="media-body">
-                         <dl class="dl-horizontal">
-                              <dt>Display name: {{display_name}}</dt>
-                              <dt>Id: {{id}}</dt>
-                              <dt>Email: {{email}}</dt>
-                              <dt>Spotify URI: <a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dt>
-                              <dt>Link: <a href="{{href}}">{{href}}</a></dt>
-                              <dt>Profile Image: <a href="{{images.0.url}}">{{images.0.url}}</a></dt>
-                              <dt>Country: {{country}}</dt>
-                         </dl>
-                    </div>
-               </div>
-          </script>
+	<div class="main">
+	  <div class="caption">
+	    <span class="border">PATRYK WISNIEWSKI</span>
+	  </div>
+	</div>
 
-          <script id="oauth-template" type="text/x-handlebars-template">
-               <h1>oAuth info</h1>
-               <dl class="dl-horizontal">
-                    <dt class="text-overflow">Access token: {{access_token}}</dt>
-                    <dt class="text-overflow">Refresh token: {{refresh_token}}</dt>
-               </dl>
-          </script>
+	<div class="info">
+	  <h3>About Patty's Site</h3>
+		<p>Welcome to my website, my name is Patryk Wisniewski and I'm a Polish-American student studying computer
+		   science at CU Boulder. Additionally, I'm also taking a minor in both communion and
+		   TAM(technology, media, and arts). My interest in computer science comes from my interest in game development
+		   but after my first year of college, it has evolved. I’m interested in learning more about software
+		   development, cybersecurity, and AI in the years to come. Outside of education, I love to mountain bike,
+		   hike, camp, watch theater, and read books. This site is being hosted on my raspberry pi and is meant as a
+		   platform to check out my current and previous projects. Please scroll down to see what I'm working on and
+		   to check my projects out for yourself.</p>
+             <br>
+             <p>You can also check out my github at <a href="https://github.com/Skyryk">https://github.com/Skyryk</a></p>
+	</div>
 
-          <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-          <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<div class="dungeonCrawler">
+	  <div class="caption">
+	    <span class="infoText">MY DUNGEON CRAWLER</span>
+	  </div>
+	</div>
 
-          <script>
-               (function()
-               {
-                    /**
-                    * Obtains parameters from the hash of the URL
-                    * @return Object
-                    */
-                    function getHashParams()
-                    {
-                         var hashParams = {};
-                         var e, r = /([^&;=]+)=?([^&;]*)/g,
-                         q = window.location.hash.substring(1);
-                         while ( e = r.exec(q))
-                         {
-                              hashParams[e[1]] = decodeURIComponent(e[2]);
-                         }
-                         return hashParams;
-                    }
+	<div class="transition">
+	  <div>
+		  <p>I am currently working on a dungeon crawler game for my enjoyment and experience. The game is constantly
+			 being worked on and it is my hope to one day build this up into a full, fun, and extensive game that many
+			 people could find enjoyment in. I am writing the game in C# using Unity 3D. The main goal for my game is
+			 to create a system where the player creates a party of 4 characters and goes out into a dungeon with random
+			 encounters, levels up, gains items, and challenges bosses. If you wish to check out the progress on my game
+			 so far please download one of the links below. Please keep in mind that I'm still learning a lot about
+			 Unity so be aware that there are a lot of bugs in the game. I try and push builds of my game to the server
+			 whenever I feel that I have reached a notable checkpoint in my development, so if you want to see how the
+			 game is progressing come back and check it out every once in a while.</p>
+		  <a href="http://pattyssite.ddns.net/Prototype 10 Windows.zip" download>WINDOWS DOWNLOAD(316MB)</a>
+		  <br>
+		  <a href="http://pattyssite.ddns.net/Prototype 10 Mac.app.zip" download>MAC DOWNLOAD(335MB)</a>
+	  </div>
+	</div>
 
-                    var userProfileSource = document.getElementById('user-profile-template').innerHTML,
-                    userProfileTemplate = Handlebars.compile(userProfileSource),
-                    userProfilePlaceholder = document.getElementById('user-profile');
+	<div class="spotify">
+	  <div class="caption">
+	    <span class="infoText">SPOTIFY SAFE PLAYLISTS</span>
+	  </div>
+	</div>
 
-                    var oauthSource = document.getElementById('oauth-template').innerHTML,
-                    oauthTemplate = Handlebars.compile(oauthSource),
-                    oauthPlaceholder = document.getElementById('oauth');
+	<div class="transition">
+	  <div>
+	    <p>This is a Spotify program that creates “safe” playlists based off the user saved music. The definition of
+		   “safe” in the case of this program is songs that are popular enough to be considered mainstream. The program
+		   works by grabbing all of a users saved songs from Spotify and then creating a playlist of “safe” music in
+		   the users library.</p>
+		  <a href="http://localhost:8888/safespotify.html">Checkout the project here</a>
+	  </div>
+	</div>
 
-                    var params = getHashParams();
-
-                    var access_token = params.access_token,
-                    refresh_token = params.refresh_token,
-                    error = params.error;
-
-                    if (error)
-                    {
-                         alert('There was an error during the authentication');
-                    }
-                    else
-                    {
-                         if (access_token)
-                         {
-                              // render oauth info
-                              oauthPlaceholder.innerHTML = oauthTemplate(
-                              {
-                                   access_token: access_token,
-                                   refresh_token: refresh_token
-                              });
-
-                              $.ajax(
-                              {
-                                   url: 'https://api.spotify.com/v1/me',
-                                   headers:
-                                   {
-                                        'Authorization': 'Bearer ' + access_token
-                                   },
-                                   success: function(response)
-                                   {
-                                        userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-                                        $('#login').hide();
-                                        $('#loggedin').show();
-                                   }
-                              });
-                         }
-                         else
-                         {
-                              // render initial screen
-                              $('#login').show();
-                              $('#loggedin').hide();
-                         }
-
-                         document.getElementById('obtain-new-token').addEventListener('click', function()
-                         {
-                              $.ajax(
-                              {
-                                   url: '/refresh_token',
-                                   data:
-                                   {
-                                        'refresh_token': refresh_token
-                                   }
-                              }).done(function(data)
-                              {
-                                   access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
-                              });
-                         }, false);
-
-                         document.getElementById('make-safe-playlist-with-tracks').addEventListener('click', function()
-                         {
-                              $.ajax(
-                              {
-                                   url: '/make-safe-playlist-with-tracks',
-                                   data:
-                                   {
-                                        'refresh_token': refresh_token
-                                   }
-                              }).done(function(data)
-                              {
-                                   access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
-                              });
-                         }, false);
-
-                         document.getElementById('make-safe-playlist-with-artists').addEventListener('click', function()
-                         {
-                              $.ajax(
-                              {
-                                   url: '/make-safe-playlist-with-artists',
-                                   data:
-                                   {
-                                        'refresh_token': refresh_token
-                                   }
-                              }).done(function(data)
-                              {
-                                   access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
-                              });
-                         }, false);
-
-                    }
-               })();
-          </script>
-     </body>
+	<div class="bird">
+	  <div class="caption">
+	    <span class="border">THANKS FOR VISITING</span>
+	  </div>
+	</div>
+	</body>
 </html>

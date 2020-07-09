@@ -2,18 +2,18 @@
   "collaborative" : false,
   "description" : null,
   "external_urls" : {
-    "spotify" : "https://open.spotify.com/playlist/0v4emu4uBrVLNvaTe6eW7Z"
+    "spotify" : "https://open.spotify.com/playlist/5Sb3lomBXcUSXjGnyyRQoz"
   },
   "followers" : {
     "href" : null,
     "total" : 0
   },
-  "href" : "https://api.spotify.com/v1/playlists/0v4emu4uBrVLNvaTe6eW7Z",
-  "id" : "0v4emu4uBrVLNvaTe6eW7Z",
+  "href" : "https://api.spotify.com/v1/playlists/5Sb3lomBXcUSXjGnyyRQoz",
+  "id" : "5Sb3lomBXcUSXjGnyyRQoz",
   "images" : [ ],
   "name" : "Safe Playlist",
   "owner" : {
-    "display_name" : "firesquirrel66",
+    "display_name" : "Patryk Wisniewski",
     "external_urls" : {
       "spotify" : "https://open.spotify.com/user/firesquirrel66"
     },
@@ -24,9 +24,9 @@
   },
   "primary_color" : null,
   "public" : false,
-  "snapshot_id" : "MSxmNmNlNTM4MjkwZjFhODcxOTMzZjJiM2E4ZmE0ODU3YTExOTA5OGE1",
+  "snapshot_id" : "MSwxNDg2ZTEzOWE3N2I5NTU4YTg2YmZjYjI0M2I1NjUxZTMxYzJkZTA2",
   "tracks" : {
-    "href" : "https://api.spotify.com/v1/playlists/0v4emu4uBrVLNvaTe6eW7Z/tracks",
+    "href" : "https://api.spotify.com/v1/playlists/5Sb3lomBXcUSXjGnyyRQoz/tracks",
     "items" : [ ],
     "limit" : 100,
     "next" : null,
@@ -35,5 +35,5 @@
     "total" : 0
   },
   "type" : "playlist",
-  "uri" : "spotify:playlist:0v4emu4uBrVLNvaTe6eW7Z"
+  "uri" : "spotify:playlist:5Sb3lomBXcUSXjGnyyRQoz"
 }

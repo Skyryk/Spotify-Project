@@ -38,7 +38,7 @@ class BinarySearchTree
      insert(song)
      {
           //Creates a new node
-          var newNode = new Node(song);
+          let newNode = new Node(song);
 
           //If the root is null...
           if(this.root === null)
@@ -86,7 +86,7 @@ class BinarySearchTree
      }
 
      //Print the tree in order based off popularity
-     printInOrder(node)
+     /*printInOrder(node)
      {
           if(node !== null)
           {
@@ -94,7 +94,7 @@ class BinarySearchTree
                console.log(node.data.name + "=" + node.data.popularity);
                this.printInOrder(node.right);
           }
-     }
+     }*/
 
      //Finds the most popular songs and adds them too an array of string
      findPopularSongs(node)

@@ -1,22 +1,21 @@
 const BST = require('./BST.js');
 const Song = BST.Song;
-const Node = BST.Node;
 const BinarySearchTree = BST.BinarySearchTree;
 
 const Hash = require('./hash.js');
 const HashTable = Hash.HashTable;
 
-var request = require('request'); // "Request" library
-var querystring = require('querystring');
-var fs = require('fs');
+let request = require('request'); // "Request" library
+let querystring = require('querystring');
+let fs = require('fs');
 
 //Grabs the users saved music and then adds the most popular songs
-function grabAndCreateWithTracks(access_token, userID)
+function grabAndCreateWithTracks(access_token, userID, explicit)
 {
-     var songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
-     var playlistID; //The ID of the playlist we will add songs too
-     var tree = new BinarySearchTree();
-     var hashTable = new HashTable(100);
+     let songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
+     let playlistID; //The ID of the playlist we will add songs too
+     let tree = new BinarySearchTree();
+     let hashTable = new HashTable(100);
 
      console.log(userID);
 
@@ -48,10 +47,10 @@ function grabAndCreateWithTracks(access_token, userID)
                fs.readFile(data_loc, function(err, data)
                {
                     // json data
-                    var jsonData = data;
+                    let jsonData = data;
 
                     // parse json
-                    var jsonParsed = JSON.parse(jsonData);
+                    let jsonParsed = JSON.parse(jsonData);
 
                     playlistID = jsonParsed.id; //Id of playlist we will add songs too
 
@@ -63,7 +62,7 @@ function grabAndCreateWithTracks(access_token, userID)
                          console.log('\x1b[95m%s\x1b[0m', "Adding songs to playlist");
                          if(songArray !== null)
                          {
-                              //Splits the song array into more manigable sizes
+                              //Splits the song array into more manageable sizes
                               createURIForPlaylist(playlistID, songArray, access_token, true);
                          }
                          else
@@ -83,11 +82,11 @@ function grabAndCreateWithTracks(access_token, userID)
 //Grabs the users saved music and then adds the most popular artists
 function grabAndCreateWithArtists(access_token, userID)
 {
-     var songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
-     var hashOfPopArtists; //A hash table that hold all the popular artists
-     var playlistID; //The ID of the playlist we will add songs too
-     var tree = new BinarySearchTree();
-     var hashTable = new HashTable(100);
+     let songArray = []; //An Array to hold all of the songs IDS that will be added to the safe playlist
+     let hashOfPopArtists; //A hash table that hold all the popular artists
+     let playlistID; //The ID of the playlist we will add songs too
+     let tree = new BinarySearchTree();
+     let hashTable = new HashTable(100);
 
      //Calls a function that grabs all of the users saved songs
      grabUsersMusic(access_token, tree, hashTable, function()
@@ -95,9 +94,9 @@ function grabAndCreateWithArtists(access_token, userID)
           hashOfPopArtists = tree.findPopularArtists(tree.getRootNode());
 
           //Looks for the artist in the hash table
-          for(var artist in hashOfPopArtists.storage)
+          for(let artist in hashOfPopArtists.storage)
           {
-               for(var llartist in hashOfPopArtists.storage[artist])
+               for(let llartist in hashOfPopArtists.storage[artist])
                {
                     //console.log(hashTable.get(hashOfPopArtists.storage[artist][llartist].name));
                     let currentArtist = hashTable.get(hashOfPopArtists.storage[artist][llartist].name);
@@ -128,10 +127,10 @@ function grabAndCreateWithArtists(access_token, userID)
                fs.readFile(data_loc, function(err, data)
                {
                     // json data
-                    var jsonData = data;
+                    let jsonData = data;
 
                     // parse json
-                    var jsonParsed = JSON.parse(jsonData);
+                    let jsonParsed = JSON.parse(jsonData);
 
                     playlistID = jsonParsed.id;
 
@@ -162,29 +161,29 @@ function grabAndCreateWithArtists(access_token, userID)
 //Grabs all of a users saved songs in order
 async function grabUsersMusic(access_token, tree, hashTable, __callback)
 {
-     var offset = 0; //Current offset for next set of saved songs
-     var currentBatchTotal;
+     let offset = 0; //Current offset for next set of saved songs
+     let currentBatchTotal;
 
-     //While the current batch of songs is 50 countine getting the users songs
+     //While the current batch of songs is 50 continue getting the users songs
      do
      {
           currentBatchTotal = 0;
 
-          //Runs the getUserSaved music and compleates it before countuing.
+          //Runs the getUserSaved music and completes it before continuing.
           let promise = new Promise((resolve, reject) =>
           {
                getUserSaved(access_token, 50, offset, function(res)
                {
                     // json data
-                    var jsonData = res;
+                    let jsonData = res;
 
                     // parse json
-                    var jsonParsed = JSON.parse(jsonData);
+                    let jsonParsed = JSON.parse(jsonData);
 
                     // song object
                     let song;
 
-                    for(var item in jsonParsed.items)
+                    for(let item in jsonParsed.items)
                     {
                          currentBatchTotal++;
                          //Create a new song object
@@ -207,7 +206,7 @@ async function grabUsersMusic(access_token, tree, hashTable, __callback)
                });
           });
 
-          //Waits untill the get getUserSaved function is done with all its tasks
+          //Waits until the get getUserSaved function is done with all its tasks
           let result = await promise;
      }
      while(currentBatchTotal === 50);
@@ -330,15 +329,15 @@ function createNewPlaylist(access_token, userID, __callback=(res)=>{})
 
 //Splits the songArray to add songs in 50 song intervals
 //PlaylistID - The id of the playlist we will add songs too
-//SongArray - The array of all the songs found in eralyier functions
+//SongArray - The array of all the songs found in earlier functions
 async function createURIForPlaylist(playlistID, songArray, access_token, tracks)
 {
-     limitedSongArray = [];
-     arrayCount = 0;
-     batch = 1;
+     let limitedSongArray = [];
+     let arrayCount = 0;
+     let batch = 1;
 
      //For each list of songs in the songArray...
-     for(var song in songArray)
+     for(let song in songArray)
      {
           if(tracks === true)
           {
@@ -347,7 +346,7 @@ async function createURIForPlaylist(playlistID, songArray, access_token, tracks)
                //If the limited array of songs is 50 long...
                if(arrayCount === 50)
                {
-                    //Add that batch of 50 songs too the playlist and reset the limted array
+                    //Add that batch of 50 songs too the playlist and reset the limited array
                     addSongToPlaylist(playlistID, limitedSongArray.toString(), access_token, batch);
                     limitedSongArray = [];
                     arrayCount = 0;
@@ -358,7 +357,7 @@ async function createURIForPlaylist(playlistID, songArray, access_token, tracks)
           else
           {
                //For each song in the list of songs in the songArray...
-               for(var llsong in songArray[song])
+               for(let llsong in songArray[song])
                {
                     limitedSongArray.push(songArray[song][llsong]); //Add the song to limited array
                     arrayCount++;

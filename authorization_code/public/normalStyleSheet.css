@@ -1,0 +1,102 @@
+body{
+	  height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #777;
+    }
+
+h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    text-align: center;
+}
+
+a{
+    color: #777;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #111;
+    text-decoration: none;
+}
+
+.main, .spotify, .bird, .dungeonCrawler{
+	position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    background-image: url("Photos/skis.jpg");
+    min-height: 100%;
+}
+
+.info {
+    color: #777;
+    background-color: white;
+    padding: 50px 80px;
+    text-align: justify;
+}
+
+.infoText {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    background:rgba(0, 0, 0,0.9);
+    padding: 18px;
+}
+
+.dungeonCrawler {
+    background-image: url("Photos/game.jpg");
+    min-height: 400px;
+}
+
+.spotify {
+    background-image: url("Photos/spotify.jpg");
+    min-height: 400px;
+}
+
+.caption {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+.transition{
+    color:#ddd;
+    background-color:#282E34;
+    padding:50px 80px;
+    text-align: justify;
+}
+
+.bird{
+    background-image: url("Photos/bird.jpg");
+    min-height: 100%;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .main, .spotify, .bird, .dungeonCrawler {
+        background-attachment: scroll;
+    }
+}
