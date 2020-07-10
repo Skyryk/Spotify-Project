@@ -18,11 +18,14 @@ function grabAndCreateWithTracks(access_token, userID, explicit)
      let hashTable = new HashTable(100);
 
      console.log(userID);
+     console.log("Explicit : " + explicit);
 
      //Calls a function that grabs all of the users saved songs
      grabUsersMusic(access_token, tree, hashTable, function()
      {
-          songArray = tree.findPopularSongs(tree.getRootNode());
+          songArray = tree.findPopularSongs(tree.getRootNode(), explicit);
+
+          console.log(songArray);
 
           //Creates a new playlist to store the saved music
           createNewPlaylist(access_token, userID, function(res)
@@ -115,8 +118,8 @@ function grabAndCreateWithArtists(access_token, userID)
                {
                     if (err)
                     {
-                         throw err;
                          console.log('\x1b[91m%s\x1b[0m', "Failed to save new playlist object to a JSON file");
+                         throw err;
                     }
                     else
                     {
@@ -192,7 +195,8 @@ async function grabUsersMusic(access_token, tree, hashTable, __callback)
                               jsonParsed.items[item].track.name,
                               jsonParsed.items[item].track.artists[0].name,
                               jsonParsed.items[item].track.popularity,
-                              jsonParsed.items[item].track.id
+                              jsonParsed.items[item].track.id,
+                              jsonParsed.items[item].track.explicit
                          );
                          tree.insert(song); //Add song to BST
                          hashTable.insert(song); //Add song to Hashtable

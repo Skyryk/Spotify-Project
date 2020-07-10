@@ -4,12 +4,13 @@ const HashTable = Hash.HashTable;
 //Class for the song object
 class Song
 {
-     constructor(name, artist, popularity, id)
+     constructor(name, artist, popularity, id, explicit)
      {
           this.name = name;
           this.artist = artist;
           this.popularity = popularity;
           this.id = id;
+          this.explicit = explicit;
      }
 }
 
@@ -97,16 +98,23 @@ class BinarySearchTree
      }*/
 
      //Finds the most popular songs and adds them too an array of string
-     findPopularSongs(node)
+     findPopularSongs(node, explicit)
      {
           if(node !== null)
           {
-               this.findPopularSongs(node.left);
+               this.findPopularSongs(node.left, explicit);
                if(node.data.popularity >= 70)
                {
-                    this.songArray.push('spotify:track:' + node.data.id);
+                    if(!explicit && !node.data.explicit)
+                    {
+                         this.songArray.push('spotify:track:' + node.data.id);
+                    }
+                    else if(explicit)
+                    {
+                         this.songArray.push('spotify:track:' + node.data.id);
+                    }
                }
-               this.findPopularSongs(node.right);
+               this.findPopularSongs(node.right, explicit);
           }
 
           return this.songArray;

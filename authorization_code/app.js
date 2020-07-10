@@ -164,7 +164,7 @@ app.get('/refresh_token', function(req, res)
 app.get('/make-safe-playlist-with-tracks', function(req, res)
 {
      //Grab data from user inputs
-     let include_explicit = req.query.include_explicit;
+     let include_explicit = (req.query.include_explicit === 'true');
 
      // requesting access token from refresh token
      let refresh_token = req.query.refresh_token;

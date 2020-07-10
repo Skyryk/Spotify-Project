@@ -2,14 +2,14 @@
   "collaborative" : false,
   "description" : null,
   "external_urls" : {
-    "spotify" : "https://open.spotify.com/playlist/5Sb3lomBXcUSXjGnyyRQoz"
+    "spotify" : "https://open.spotify.com/playlist/5ctwe2GtzdGqlL9t0wqpfS"
   },
   "followers" : {
     "href" : null,
     "total" : 0
   },
-  "href" : "https://api.spotify.com/v1/playlists/5Sb3lomBXcUSXjGnyyRQoz",
-  "id" : "5Sb3lomBXcUSXjGnyyRQoz",
+  "href" : "https://api.spotify.com/v1/playlists/5ctwe2GtzdGqlL9t0wqpfS",
+  "id" : "5ctwe2GtzdGqlL9t0wqpfS",
   "images" : [ ],
   "name" : "Safe Playlist",
   "owner" : {
@@ -24,9 +24,9 @@
   },
   "primary_color" : null,
   "public" : false,
-  "snapshot_id" : "MSwxNDg2ZTEzOWE3N2I5NTU4YTg2YmZjYjI0M2I1NjUxZTMxYzJkZTA2",
+  "snapshot_id" : "MSwyOTk0NWMzN2E1YjA1YThkZThiMWU5ODlhODk2OTliZDVmMzJjYjVj",
   "tracks" : {
-    "href" : "https://api.spotify.com/v1/playlists/5Sb3lomBXcUSXjGnyyRQoz/tracks",
+    "href" : "https://api.spotify.com/v1/playlists/5ctwe2GtzdGqlL9t0wqpfS/tracks",
     "items" : [ ],
     "limit" : 100,
     "next" : null,
@@ -35,5 +35,5 @@
     "total" : 0
   },
   "type" : "playlist",
-  "uri" : "spotify:playlist:5Sb3lomBXcUSXjGnyyRQoz"
+  "uri" : "spotify:playlist:5ctwe2GtzdGqlL9t0wqpfS"
 }

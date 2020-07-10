@@ -1,4 +1,4 @@
-//An object for storing an atrist and their songs
+//An object for storing an artist and their songs
 class Artist
 {
      constructor(name)
@@ -25,11 +25,11 @@ class HashTable
      //Gets the hash value to be used as the index of the storage array
      hashCode(string, size)
      {
-          var hash = 0;
-          if (string.length == 0) return hash;
-          for (var i = 0; i < string.length; i++)
+          let hash = 0;
+          if (string.length === 0) return hash;
+          for (let i = 0; i < string.length; i++)
           {
-               var letter = string.charCodeAt(i);
+               let letter = string.charCodeAt(i);
                hash = ((hash<<5)-hash)+letter;
                hash = hash & hash;
           }
@@ -80,11 +80,11 @@ class HashTable
           }
      }
 
-     //Prints in the console all the contents of storage
+     /*//Prints in the console all the contents of storage
      showall()
      {
           console.log(this.storage);
-     }
+     }*/
 
      //Returns an artist
      get(value)
@@ -92,7 +92,7 @@ class HashTable
           let index = this.hashCode(value, this.size);
 
           //Looks for the artist in the hash table
-          for(var artist in this.storage[index])
+          for(let artist in this.storage[index])
           {
                if(this.storage[index][artist].name === value)
                     return this.storage[index][artist];
