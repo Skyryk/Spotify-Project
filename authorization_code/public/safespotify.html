@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/html">
      <head>
-          <title>Example of the Authorization Code flow with Spotify</title>
+          <title>Spotify Safe Playlists</title>
           <link rel="stylesheet" type="text/css" href="/stylesheet.css">
      </head>
 
@@ -11,43 +11,38 @@
                     <a href="/login" class="btn">Log in with Spotify</a>
                </div>
                <div id="loggedin">
-                    <div id="user-profile">
+                    <div id="user-profile"></div>
+                    <div id="description">
+                         <p>This is a Spotify app that creates safe for work playlists based on the user's saved music.
+                              Pretty much the program works by grabbing all of a user's liked songs and then checking
+                              out their popularity score. If the song's popularity score is above a certain threshold
+                              it will be added to the playlist. The idea behind this is that the playlist will mostly
+                              include mainstream songs that most people would be willing to tolerate. The app also
+                              allows users to create playlists based on artist popularity rather than individual song
+                              popularity. Finally, you can choose if you wish the explicit songs on not with more
+                              filters and options planned for the future.
+                         </p>
                     </div>
-                    <div id="oauth">
+                    <div id="op_btn_container">
+                         <div class="left">
+                              <h3>Options</h3>
+                              <input type="checkbox" id="include-explicit"> Include Explicit Songs </input>
+                         </div>
+                         <div class="right">
+                              <button class="btn2" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
+                              <button class="btn2" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
+                         </div>
                     </div>
-                    <button class="btn2" id="obtain-new-token">Obtain new token using the refresh token</button>
-                    <button class="btn2" id="make-safe-playlist-with-tracks">Make safe playlist with tracks</button>
-                    <button class="btn2" id="make-safe-playlist-with-artists">Make safe playlist with artists</button>
-                    <input type="checkbox" id="include-explicit"> Include Explicit Songs </input>
                </div>
           </div>
 
           <script id="user-profile-template" type="text/x-handlebars-template">
-               <h1>Logged in as {{display_name}}</h1>
+               <h3 class="welcome">Welcome {{display_name}}</h3>
                <div class="media">
                     <div class="pull-left">
-                         <img class="media-object" width="150" src="{{images.0.url}}" />
-                    </div>
-                    <div class="media-body">
-                         <dl class="dl-horizontal">
-                              <dt>Display name: {{display_name}}</dt>
-                              <dt>Id: {{id}}</dt>
-                              <dt>Email: {{email}}</dt>
-                              <dt>Spotify URI: <a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dt>
-                              <dt>Link: <a href="{{href}}">{{href}}</a></dt>
-                              <dt>Profile Image: <a href="{{images.0.url}}">{{images.0.url}}</a></dt>
-                              <dt>Country: {{country}}</dt>
-                         </dl>
+                         <img class="media-object" width="300" src="{{images.0.url}}" />
                     </div>
                </div>
-          </script>
-
-          <script id="oauth-template" type="text/x-handlebars-template">
-               <h1>oAuth info</h1>
-               <dl class="dl-horizontal">
-                    <dt class="text-overflow">Access token: {{access_token}}</dt>
-                    <dt class="text-overflow">Refresh token: {{refresh_token}}</dt>
-               </dl>
           </script>
 
           <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
@@ -76,10 +71,6 @@
                     userProfileTemplate = Handlebars.compile(userProfileSource),
                     userProfilePlaceholder = document.getElementById('user-profile');
 
-                    let oauthSource = document.getElementById('oauth-template').innerHTML,
-                    oauthTemplate = Handlebars.compile(oauthSource),
-                    oauthPlaceholder = document.getElementById('oauth');
-
                     let params = getHashParams();
 
                     let access_token = params.access_token,
@@ -94,13 +85,6 @@
                     {
                          if (access_token)
                          {
-                              // render oauth info
-                              oauthPlaceholder.innerHTML = oauthTemplate(
-                              {
-                                   access_token: access_token,
-                                   refresh_token: refresh_token
-                              });
-
                               $.ajax(
                               {
                                    url: 'https://api.spotify.com/v1/me',
@@ -123,26 +107,6 @@
                               $('#loggedin').hide();
                          }
 
-                         document.getElementById('obtain-new-token').addEventListener('click', function()
-                         {
-                              $.ajax(
-                              {
-                                   url: '/refresh_token',
-                                   data:
-                                   {
-                                        'refresh_token': refresh_token
-                                   }
-                              }).done(function(data)
-                              {
-                                   access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
-                              });
-                         }, false);
-
                          document.getElementById('make-safe-playlist-with-tracks').addEventListener('click', function()
                          {
                               $.ajax(
@@ -156,11 +120,6 @@
                               }).done(function(data)
                               {
                                    access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
                               });
                          }, false);
 
@@ -177,14 +136,8 @@
                               }).done(function(data)
                               {
                                    access_token = data.access_token;
-                                   oauthPlaceholder.innerHTML = oauthTemplate(
-                                   {
-                                        access_token: access_token,
-                                        refresh_token: refresh_token
-                                   });
                               });
                          }, false);
-
                     }
                })();
           </script>

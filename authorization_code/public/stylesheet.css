@@ -1,41 +1,20 @@
-#login
-{
-    display: none;
-    position: absolute;
-    top: 45%;
-    width: 100%;
-    text-align: center;
-    color: #000;
-}
-#loggedin
-{
-    background-color: white;
-    display: none;
-    width: 50%;
-    text-align: center;
-    color: #000;
-    margin: auto;
-}
-.text-overflow
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 30%;
-    margin: auto;
-}
 body
 {
-    height: 100%;
-    margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
     color: #777;
     background-image: url("skis.jpg");
-    min-height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+h3
+{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    text-align: center;
 }
 a
 {
@@ -46,6 +25,59 @@ a:hover
 {
     opacity: 1;
     text-decoration: none;
+}
+#login
+{
+    display: none;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.welcome
+{
+    padding-top: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+.media
+{
+    padding-top: 18px;
+}
+#loggedin
+{
+    background-color: white;
+    display: none;
+    width: 50%;
+    text-align: center;
+    color: #000;
+    margin: auto;
+}
+#description
+{
+    padding: 50px 80px;
+    text-align: center;
+    color: #000;
+    margin: auto;
+}
+#op_btn_container
+{
+    text-align: center;
+    color: #000;
+    margin: auto;
+    display: flex;
+}
+.left
+{
+    width: 50%;
+    float: left;
+}
+.right
+{
+    margin: auto;
+    width: 50%;
+    float: right;
 }
 .btn
 {
